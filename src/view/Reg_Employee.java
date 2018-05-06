@@ -1,6 +1,6 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template file, choose Reg_Tools | Templates
  * and open the template in the editor.
  */
 package view;
@@ -17,12 +17,75 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
 
 /**
  *
  * @author Sachintha
  */
-public class Registration extends javax.swing.JFrame {
+public class Reg_Employee extends javax.swing.JFrame {
 
     private final MysqlConnect _dbConnection;
     private final SimpleDateFormat dateformat;
@@ -31,7 +94,7 @@ public class Registration extends javax.swing.JFrame {
     /**
      * Creates new form Registration
      */
-    public Registration() {
+    public Reg_Employee() {
         _dbConnection = MysqlConnect.getDbCon();
         dateformat = new SimpleDateFormat("yyyy-MM-dd");
         GetEmploye();
@@ -52,12 +115,13 @@ public class Registration extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnCli1 = new javax.swing.JButton();
+        btnSup1 = new javax.swing.JButton();
+        btnSto1 = new javax.swing.JButton();
+        btnEmp1 = new javax.swing.JButton();
+        btnIte1 = new javax.swing.JButton();
+        btnToo1 = new javax.swing.JButton();
+        btnVeh1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         Clocklbl = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -92,50 +156,57 @@ public class Registration extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(3, 38, 91));
 
-        jButton2.setText("Employee Registration");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCli1.setText("Client Registration");
+        btnCli1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCli1ActionPerformed(evt);
+            }
+        });
+
+        btnSup1.setText("Supplier Registration");
+        btnSup1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSup1ActionPerformed(evt);
+            }
+        });
+
+        btnSto1.setText("Stores Registration");
+        btnSto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSto1ActionPerformed(evt);
+            }
+        });
+
+        btnEmp1.setText("Employee Registration");
+        btnEmp1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                btnEmp1MouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEmp1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Stores Registration");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnEmp1ActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Supplier Registration");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnIte1.setText("Item Registration");
+        btnIte1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnIte1ActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Client Registration");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnToo1.setText("Tools Registration");
+        btnToo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnToo1ActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Vehicle Registration");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnVeh1.setText("Vehicle Registration");
+        btnVeh1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        jButton7.setText("Tools Registration");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnVeh1ActionPerformed(evt);
             }
         });
 
@@ -146,30 +217,32 @@ public class Registration extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                    .addComponent(btnIte1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEmp1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSto1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSup1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCli1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVeh1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnToo1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 44, Short.MAX_VALUE))
+                .addComponent(btnEmp1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSto1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSup1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCli1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVeh1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnToo1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnIte1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(3, 38, 91));
@@ -193,7 +266,7 @@ public class Registration extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -303,7 +376,7 @@ public class Registration extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -451,11 +524,12 @@ public class Registration extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
@@ -464,41 +538,6 @@ public class Registration extends javax.swing.JFrame {
     private void txtconnumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtconnumberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtconnumberActionPerformed
-
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jButton2MouseClicked
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new Stores_Registration().show();
-        this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        new Supplier_Registration().show();
-        this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        new Client_Registration().show();
-        this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        new Vehicle_Registration().show();
-        this.dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        new Tools().show();
-        this.dispose();
-    }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
@@ -518,7 +557,7 @@ public class Registration extends javax.swing.JFrame {
             int tmp = _dbConnection.insert(sql);
 
             System.out.println("Key : " + tmp);
-            new Registration().show();
+            new Reg_Employee().show();
             this.dispose();
         } catch (Exception e) {
             e.printStackTrace();
@@ -552,7 +591,7 @@ public class Registration extends javax.swing.JFrame {
                 txtconnumber.setText(resultSet.getString("contactno"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_epm_listMouseClicked
 
@@ -568,12 +607,52 @@ public class Registration extends javax.swing.JFrame {
             String sql="UPDATE reg_employee SET st = 'D' WHERE empid ="+part1 +"";
 //            MysqlConnect.db.query(sql);
                     int tmp = _dbConnection.insert(sql);
-            new Registration().show();
+            new Reg_Employee().show();
             this.dispose();
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void btnCli1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCli1ActionPerformed
+        new Reg_Client().show();
+        this.dispose();
+    }//GEN-LAST:event_btnCli1ActionPerformed
+
+    private void btnSup1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSup1ActionPerformed
+        new Reg_Supplier().show();
+        this.dispose();
+    }//GEN-LAST:event_btnSup1ActionPerformed
+
+    private void btnSto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSto1ActionPerformed
+        new Reg_Stores().show();
+        this.dispose();
+    }//GEN-LAST:event_btnSto1ActionPerformed
+
+    private void btnEmp1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmp1MouseClicked
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEmp1MouseClicked
+
+    private void btnEmp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmp1ActionPerformed
+        new Reg_Employee().show();
+        this.dispose();
+    }//GEN-LAST:event_btnEmp1ActionPerformed
+
+    private void btnIte1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIte1ActionPerformed
+        new Reg_Item().show();
+        this.dispose();
+    }//GEN-LAST:event_btnIte1ActionPerformed
+
+    private void btnToo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToo1ActionPerformed
+        new Reg_Tools().show();
+        this.dispose();
+    }//GEN-LAST:event_btnToo1ActionPerformed
+
+    private void btnVeh1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVeh1ActionPerformed
+        new Reg_Vehicle().show();
+        this.dispose();
+    }//GEN-LAST:event_btnVeh1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -592,20 +671,21 @@ public class Registration extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Employee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Employee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Employee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Employee.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Registration().setVisible(true);
+                new Reg_Employee().setVisible(true);
             }
         });
     }
@@ -637,17 +717,18 @@ public class Registration extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Clocklbl;
+    private javax.swing.JButton btnCli1;
+    private javax.swing.JButton btnEmp1;
+    private javax.swing.JButton btnIte1;
+    private javax.swing.JButton btnSto1;
+    private javax.swing.JButton btnSup1;
+    private javax.swing.JButton btnToo1;
+    private javax.swing.JButton btnVeh1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JList epm_list;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
@@ -685,7 +766,7 @@ public class Registration extends javax.swing.JFrame {
                 dataModel.addElement(rs.getString("empid") + "--" + rs.getString("name"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

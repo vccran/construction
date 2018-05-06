@@ -1,6 +1,6 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template file, choose Reg_Tools | Templates
  * and open the template in the editor.
  */
 package view;
@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  *
  * @author Sachintha
  */
-public class Stores_Registration extends javax.swing.JFrame {
+public class Reg_Stores extends javax.swing.JFrame {
 
     private final MysqlConnect _dbConnection;
     private final SimpleDateFormat dateformat;
@@ -27,7 +27,7 @@ public class Stores_Registration extends javax.swing.JFrame {
     /**
      * Creates new form Stores_Registration
      */
-    public Stores_Registration() {
+    public Reg_Stores() {
         _dbConnection = MysqlConnect.getDbCon();
         dateformat = new SimpleDateFormat("yyyy-MM-dd");
         GetStore();
@@ -49,12 +49,13 @@ public class Stores_Registration extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnEmp = new javax.swing.JButton();
+        btnSto = new javax.swing.JButton();
+        btnSup = new javax.swing.JButton();
+        btnCli = new javax.swing.JButton();
+        btnVeh = new javax.swing.JButton();
+        btnToo = new javax.swing.JButton();
+        btnIte = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -133,50 +134,57 @@ public class Stores_Registration extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(3, 38, 91));
 
-        jButton2.setText("Employee Registration");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnEmp.setText("Employee Registration");
+        btnEmp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                btnEmpMouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEmp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Stores Registration");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnEmpActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Supplier Registration");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnSto.setText("Stores Registration");
+        btnSto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnStoActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Client Registration");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnSup.setText("Supplier Registration");
+        btnSup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnSupActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Vehicle Registration");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnCli.setText("Client Registration");
+        btnCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnCliActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Tools Registration");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        btnVeh.setText("Vehicle Registration");
+        btnVeh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                btnVehActionPerformed(evt);
+            }
+        });
+
+        btnToo.setText("Tools Registration");
+        btnToo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTooActionPerformed(evt);
+            }
+        });
+
+        btnIte.setText("Item Registration");
+        btnIte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIteActionPerformed(evt);
             }
         });
 
@@ -187,28 +195,31 @@ public class Stores_Registration extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnIte, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSto, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSup, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCli, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVeh, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnToo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSto, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSup, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCli, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVeh, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnToo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnIte, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -405,45 +416,45 @@ public class Stores_Registration extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void btnEmpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmpMouseClicked
 
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_btnEmpMouseClicked
 
     private void txtconnumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtconnumberActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtconnumberActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new Registration().show();
+    private void btnEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpActionPerformed
+        new Reg_Employee().show();
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnEmpActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new Stores_Registration().show();
+    private void btnStoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStoActionPerformed
+        new Reg_Stores().show();
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnStoActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        new Supplier_Registration().show();
+    private void btnSupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupActionPerformed
+        new Reg_Supplier().show();
         this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnSupActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        new Client_Registration().show();
+    private void btnCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCliActionPerformed
+        new Reg_Client().show();
         this.dispose();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnCliActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        new Vehicle_Registration().show();
+    private void btnVehActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehActionPerformed
+        new Reg_Vehicle().show();
         this.dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnVehActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        new Tools().show();
+    private void btnTooActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTooActionPerformed
+        new Reg_Tools().show();
         this.dispose();
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_btnTooActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
@@ -470,7 +481,7 @@ public class Stores_Registration extends javax.swing.JFrame {
             int tmp = _dbConnection.insertAI(sql);
             JOptionPane.showMessageDialog(rootPane, "Saved successfully");
             System.out.println("Key : " + tmp);
-            new Stores_Registration().show();
+            new Reg_Stores().show();
             this.dispose();
         } catch (Exception e) {
             e.printStackTrace();
@@ -498,7 +509,7 @@ public class Stores_Registration extends javax.swing.JFrame {
                 txtofzin.setText(resultSet.getString("ofz_incharge"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_store_listMouseClicked
 
@@ -513,12 +524,17 @@ public class Stores_Registration extends javax.swing.JFrame {
             System.out.println(part1);
             String sql="UPDATE reg_stores SET st = 'D' WHERE stores_id ="+part1 +"";   
             int tmp = _dbConnection.insert(sql);
-            new Stores_Registration().show();
+            new Reg_Stores().show();
             this.dispose();
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void btnIteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIteActionPerformed
+        new Reg_Item().show();
+        this.dispose();
+    }//GEN-LAST:event_btnIteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -537,33 +553,35 @@ public class Stores_Registration extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Stores_Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Stores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Stores_Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Stores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Stores_Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Stores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Stores_Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Stores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Stores_Registration().setVisible(true);
+                new Reg_Stores().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Clocklbl;
+    private javax.swing.JButton btnCli;
+    private javax.swing.JButton btnEmp;
+    private javax.swing.JButton btnIte;
+    private javax.swing.JButton btnSto;
+    private javax.swing.JButton btnSup;
+    private javax.swing.JButton btnToo;
+    private javax.swing.JButton btnVeh;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
@@ -599,7 +617,7 @@ public class Stores_Registration extends javax.swing.JFrame {
                 dataModel.addElement(rs.getString("stores_id") + "--" + rs.getString("name"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
