@@ -1,6 +1,6 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template file, choose Reg_Tools | Templates
  * and open the template in the editor.
  */
 package view;
@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  *
  * @author Sachintha
  */
-public class Stores_Registration extends javax.swing.JFrame {
+public class Reg_Stores extends javax.swing.JFrame {
 
     private final MysqlConnect _dbConnection;
     private final SimpleDateFormat dateformat;
@@ -27,7 +27,7 @@ public class Stores_Registration extends javax.swing.JFrame {
     /**
      * Creates new form Stores_Registration
      */
-    public Stores_Registration() {
+    public Reg_Stores() {
         _dbConnection = MysqlConnect.getDbCon();
         dateformat = new SimpleDateFormat("yyyy-MM-dd");
         GetStore();
@@ -416,32 +416,32 @@ public class Stores_Registration extends javax.swing.JFrame {
     }//GEN-LAST:event_txtconnumberActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new Registration().show();
+        new Reg_Employee().show();
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new Stores_Registration().show();
+        new Reg_Stores().show();
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        new Supplier_Registration().show();
+        new Reg_Supplier().show();
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        new Client_Registration().show();
+        new Reg_Client().show();
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        new Vehicle_Registration().show();
+        new Reg_Vehicle().show();
         this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        new Tools().show();
+        new Reg_Tools().show();
         this.dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -470,7 +470,7 @@ public class Stores_Registration extends javax.swing.JFrame {
             int tmp = _dbConnection.insertAI(sql);
             JOptionPane.showMessageDialog(rootPane, "Saved successfully");
             System.out.println("Key : " + tmp);
-            new Stores_Registration().show();
+            new Reg_Stores().show();
             this.dispose();
         } catch (Exception e) {
             e.printStackTrace();
@@ -498,7 +498,7 @@ public class Stores_Registration extends javax.swing.JFrame {
                 txtofzin.setText(resultSet.getString("ofz_incharge"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_store_listMouseClicked
 
@@ -513,10 +513,10 @@ public class Stores_Registration extends javax.swing.JFrame {
             System.out.println(part1);
             String sql="UPDATE reg_stores SET st = 'D' WHERE stores_id ="+part1 +"";   
             int tmp = _dbConnection.insert(sql);
-            new Stores_Registration().show();
+            new Reg_Stores().show();
             this.dispose();
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton8ActionPerformed
 
@@ -537,20 +537,21 @@ public class Stores_Registration extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Stores_Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Stores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Stores_Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Stores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Stores_Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Stores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Stores_Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Stores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Stores_Registration().setVisible(true);
+                new Reg_Stores().setVisible(true);
             }
         });
     }
@@ -599,7 +600,7 @@ public class Stores_Registration extends javax.swing.JFrame {
                 dataModel.addElement(rs.getString("stores_id") + "--" + rs.getString("name"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

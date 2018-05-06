@@ -1,6 +1,6 @@
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template file, choose Reg_Tools | Templates
  * and open the template in the editor.
  */
 package view;
@@ -18,13 +18,13 @@ import javax.swing.JOptionPane;
  *
  * @author Sachintha
  */
-public class Supplier_Registration extends javax.swing.JFrame {
+public class Reg_Supplier extends javax.swing.JFrame {
 
     private final MysqlConnect _dbConnection;
     private final SimpleDateFormat dateformat;
     DefaultListModel dataModel;
 
-    public Supplier_Registration() {
+    public Reg_Supplier() {
         _dbConnection = MysqlConnect.getDbCon();
         dateformat = new SimpleDateFormat("yyyy-MM-dd");
         GetSupplier();
@@ -633,32 +633,32 @@ public class Supplier_Registration extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox8ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        new Registration().show();
+        new Reg_Employee().show();
         this.dispose();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        new Stores_Registration().show();
+        new Reg_Stores().show();
         this.dispose();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        new Supplier_Registration().show();
+        new Reg_Supplier().show();
         this.dispose();
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        new Client_Registration().show();
+        new Reg_Client().show();
         this.dispose();
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        new Vehicle_Registration().show();
+        new Reg_Vehicle().show();
         this.dispose();
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        new Tools().show();
+        new Reg_Tools().show();
         this.dispose();
     }//GEN-LAST:event_jButton13ActionPerformed
 
@@ -711,10 +711,10 @@ public class Supplier_Registration extends javax.swing.JFrame {
             int tmp = _dbConnection.insert(sql);
 
             System.out.println("Key : " + tmp);
-            new Supplier_Registration().show();
+            new Reg_Supplier().show();
             this.dispose();
         } catch (SQLException ex) {
-            Logger.getLogger(Supplier_Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Supplier.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -748,7 +748,7 @@ public class Supplier_Registration extends javax.swing.JFrame {
                 jTextField12.setText(resultSet.getString("acountno"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_cli_listMouseClicked
 
@@ -764,10 +764,10 @@ public class Supplier_Registration extends javax.swing.JFrame {
             String sql = "UPDATE reg_sup SET st = 'D' WHERE supid =" + part1 + "";
             //            MysqlConnect.db.query(sql);
             int tmp = _dbConnection.insert(sql);
-            new Supplier_Registration().show();
+            new Reg_Supplier().show();
             this.dispose();
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton26ActionPerformed
 
@@ -792,20 +792,21 @@ public class Supplier_Registration extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Supplier_Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Supplier_Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Supplier_Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Supplier_Registration.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Reg_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Supplier_Registration().setVisible(true);
+                new Reg_Supplier().setVisible(true);
             }
         });
     }
@@ -883,7 +884,7 @@ public class Supplier_Registration extends javax.swing.JFrame {
                 dataModel.addElement(rs.getString("supid") + "--" + rs.getString("name"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

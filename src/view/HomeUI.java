@@ -220,7 +220,7 @@ public class HomeUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Registration reg = new Registration();
+        Reg_Employee reg = new Reg_Employee();
         reg.show();
         
     }//GEN-LAST:event_jButton1ActionPerformed
