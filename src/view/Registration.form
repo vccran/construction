@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup3">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+          </Group>
+          <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5b" green="26" red="3" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jButton2" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
+                      <Component id="jButton3" min="-2" pref="133" max="-2" attributes="0"/>
+                      <Component id="jButton4" min="-2" pref="133" max="-2" attributes="0"/>
+                      <Component id="jButton5" min="-2" pref="133" max="-2" attributes="0"/>
+                      <Component id="jButton6" min="-2" pref="133" max="-2" attributes="0"/>
+                      <Component id="jButton7" min="-2" pref="133" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="36" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton2" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="jButton3" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="jButton4" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="jButton5" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="jButton6" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="jButton7" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="jButton2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Employee Registration"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Stores Registration"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Supplier Registration"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Client Registration"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Vehicle Registration"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tools Registration"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel3">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="5b" green="26" red="3" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="jLabel4" min="-2" pref="114" max="-2" attributes="0"/>
+                  <EmptySpace pref="174" max="32767" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="595" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                  <Component id="jLabel3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="Clocklbl" min="-2" pref="121" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jLabel4" min="-2" pref="107" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="Clocklbl" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="Clocklbl">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Narrow" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="jLabel2"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/pic/Untitl1.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Narrow" size="36" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="      Bhaghya Constructions(PVT)Ltd."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/pic/Setting.png"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="txtname" min="-2" pref="270" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                                  <Component id="txtempid" min="-2" pref="270" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+                                  <Component id="txtaddress" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtemail" alignment="0" pref="270" max="32767" attributes="0"/>
+                                      <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtconnumber" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jDateChooser1" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="radmale" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="radfemale" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
+                          <Component id="jLabel14" min="-2" pref="203" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="272" max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" pref="88" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jPanel4" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jLabel14" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtempid" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtname" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtaddress" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtemail" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radmale" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="radfemale" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jDateChooser1" max="32767" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtconnumber" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="38" max="32767" attributes="0"/>
+                  <Component id="jButton1" min="-2" pref="34" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Narrow" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Narrow" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Employee-ID"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel14">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Black" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Employee Registration"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtempid">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="EMP-ID"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtname">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Name"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtaddress">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Address"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtemail">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Email"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtconnumber">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="+94-XXXXXXXXXX"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtconnumberActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel15">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Narrow" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Sex"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel16">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Narrow" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="E-mail"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel18">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Narrow" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Date of birth"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel19">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Narrow" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Contact Number"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel20">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Narrow" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Employee Type"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel21">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Narrow" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Address"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="radmale">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup1"/>
+            </Property>
+            <Property name="selected" type="boolean" value="true"/>
+            <Property name="text" type="java.lang.String" value="Male"/>
+            <Property name="actionCommand" type="java.lang.String" value="M"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="Registration_radmale"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="radfemale">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Female"/>
+            <Property name="actionCommand" type="java.lang.String" value="F"/>
+          </Properties>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
+          <Properties>
+            <Property name="dateFormatString" type="java.lang.String" value="YYYY-MM-dd"/>
+            <Property name="minSelectableDate" type="java.util.Date" editor="org.netbeans.beaninfo.editors.DateEditor">
+              <SerializedValue value="-84,-19,0,5,115,114,0,14,106,97,118,97,46,117,116,105,108,46,68,97,116,101,104,106,-127,1,75,89,116,25,3,0,0,120,112,119,8,-1,-1,-57,124,-30,-111,7,-56,120"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="287">
+                <StringItem index="0" value="Adz Worker"/>
+                <StringItem index="1" value="Air Breaker Operator"/>
+                <StringItem index="2" value="Air Drill Operator"/>
+                <StringItem index="3" value="Air Gun Operator"/>
+                <StringItem index="4" value="Air Hammer Operator"/>
+                <StringItem index="5" value="Air Tool Operator"/>
+                <StringItem index="6" value="Aluminum Pool Installer"/>
+                <StringItem index="7" value="Asbestos Removal Worker"/>
+                <StringItem index="8" value="Asphalt Distributor Tender"/>
+                <StringItem index="9" value="Asphalt Heater Tender"/>
+                <StringItem index="10" value="Asphalt Layer"/>
+                <StringItem index="11" value="Asphalt Patcher"/>
+                <StringItem index="12" value="Asphalt Paver"/>
+                <StringItem index="13" value="Asphalt Raker"/>
+                <StringItem index="14" value="Asphalt Smoother"/>
+                <StringItem index="15" value="Asphalt Spreader"/>
+                <StringItem index="16" value="Asphalt Tamper"/>
+                <StringItem index="17" value="Asphalt Worker"/>
+                <StringItem index="18" value="Auxiliary Equipment Tender"/>
+                <StringItem index="19" value="Awning Hanger"/>
+                <StringItem index="20" value="Awning Maker and Installer"/>
+                <StringItem index="21" value="Axman"/>
+                <StringItem index="22" value="Batch Dumper"/>
+                <StringItem index="23" value="Beller"/>
+                <StringItem index="24" value="Bellman"/>
+                <StringItem index="25" value="Belter"/>
+                <StringItem index="26" value="Beltman"/>
+                <StringItem index="27" value="Biofuels Plant Construction Worker"/>
+                <StringItem index="28" value="Black Top Raker"/>
+                <StringItem index="29" value="Black Topper"/>
+                <StringItem index="30" value="Bottom Man"/>
+                <StringItem index="31" value="Bottom Worker"/>
+                <StringItem index="32" value="Breast Worker"/>
+                <StringItem index="33" value="Bridge Builder"/>
+                <StringItem index="34" value="Broom Man"/>
+                <StringItem index="35" value="Broom Worker"/>
+                <StringItem index="36" value="Brush Cutter"/>
+                <StringItem index="37" value="Building Cleaner"/>
+                <StringItem index="38" value="Bull Float Finisher"/>
+                <StringItem index="39" value="Burlap Man"/>
+                <StringItem index="40" value="Burlap Worker"/>
+                <StringItem index="41" value="Caisson Worker"/>
+                <StringItem index="42" value="Cement Based Materials Pump Tender"/>
+                <StringItem index="43" value="Cement Breake"/>
+                <StringItem index="44" value="Cement Cutter"/>
+                <StringItem index="45" value="Cement Mixer"/>
+                <StringItem index="46" value="Chuck Tender"/>
+                <StringItem index="47" value="Cinder Crew Worker"/>
+                <StringItem index="48" value="Circular Saw Operator"/>
+                <StringItem index="49" value="Cleaner"/>
+                <StringItem index="50" value="Column Precaster"/>
+                <StringItem index="51" value="Concrete Building Assembler"/>
+                <StringItem index="52" value="Concrete Buster Operator"/>
+                <StringItem index="53" value="Concrete Curer"/>
+                <StringItem index="54" value="Concrete Handler"/>
+                <StringItem index="55" value="Concrete Layer"/>
+                <StringItem index="56" value="Concrete Mixer"/>
+                <StringItem index="57" value="Concrete Pourer"/>
+                <StringItem index="58" value="Concrete Puddler"/>
+                <StringItem index="59" value="Concrete Spreader"/>
+                <StringItem index="60" value="Concrete Vibrator Operator"/>
+                <StringItem index="61" value="Concrete Worker"/>
+                <StringItem index="62" value="Connection Worker"/>
+                <StringItem index="63" value="Construction Coordinator"/>
+                <StringItem index="64" value="Construction Craft Laborer"/>
+                <StringItem index="65" value="Construction Inspector"/>
+                <StringItem index="66" value="Construction Laborer"/>
+                <StringItem index="67" value="Construction or Leak Gang Laborer"/>
+                <StringItem index="68" value="Construction Person"/>
+                <StringItem index="69" value="Construction Pit Worker"/>
+                <StringItem index="70" value="Construction Trench Digger"/>
+                <StringItem index="71" value="Construction Worker"/>
+                <StringItem index="72" value="Core-Drill Operator"/>
+                <StringItem index="73" value="ulvert Installer"/>
+                <StringItem index="74" value="Curb and Gutter Laborer"/>
+                <StringItem index="75" value="Demlition Hammer Operator"/>
+                <StringItem index="76" value="Demolition Specialist"/>
+                <StringItem index="77" value="Demolition Worker"/>
+                <StringItem index="78" value="Demolitionist"/>
+                <StringItem index="79" value="Digger"/>
+                <StringItem index="80" value="Dirt Shoveler"/>
+                <StringItem index="81" value="Ditch Digger"/>
+                <StringItem index="82" value="Ditch Repairer"/>
+                <StringItem index="83" value="Ditch Rider"/>
+                <StringItem index="84" value="Ditcher"/>
+                <StringItem index="85" value="Dope Pourer"/>
+                <StringItem index="86" value="Dopeman"/>
+                <StringItem index="87" value="Doper"/>
+                <StringItem index="88" value="Dowel Pin Man"/>
+                <StringItem index="89" value="Dowel Pin Worker"/>
+                <StringItem index="90" value="Drain Layer"/>
+                <StringItem index="91" value="Drapery Hanger"/>
+                <StringItem index="92" value="Dredge Pipe Operator"/>
+                <StringItem index="93" value="Dredge Pipeman"/>
+                <StringItem index="94" value="Drifter"/>
+                <StringItem index="95" value="Driller Helper"/>
+                <StringItem index="96" value="Drop Crew Laborer"/>
+                <StringItem index="97" value="Dust Handler"/>
+                <StringItem index="98" value="Earth Mover"/>
+                <StringItem index="99" value="Fence Post Driver"/>
+                <StringItem index="100" value="Fire Pot Operator"/>
+                <StringItem index="101" value="Flare Man"/>
+                <StringItem index="102" value="Flare Worker"/>
+                <StringItem index="103" value="Form Stripper"/>
+                <StringItem index="104" value="General Laborer"/>
+                <StringItem index="105" value="Grade Checker"/>
+                <StringItem index="106" value="Grade Tamper"/>
+                <StringItem index="107" value="Grader"/>
+                <StringItem index="108" value="Gravel Screener"/>
+                <StringItem index="109" value="Grit Blaster"/>
+                <StringItem index="110" value="Grommet Man"/>
+                <StringItem index="111" value="Grommet Worker"/>
+                <StringItem index="112" value="Ground Hand"/>
+                <StringItem index="113" value="Ground Worker"/>
+                <StringItem index="114" value="Groundman"/>
+                <StringItem index="115" value="Groundsman"/>
+                <StringItem index="116" value="Grout Machine Operator"/>
+                <StringItem index="117" value="Grout Worker"/>
+                <StringItem index="118" value="Groutman"/>
+                <StringItem index="119" value="Grunt"/>
+                <StringItem index="120" value="Handyman"/>
+                <StringItem index="121" value="Helper"/>
+                <StringItem index="122" value="High Man"/>
+                <StringItem index="123" value="High Worker"/>
+                <StringItem index="124" value="Hod Carrier"/>
+                <StringItem index="125" value="Hole Digger"/>
+                <StringItem index="126" value="Home Performance Laborer"/>
+                <StringItem index="127" value="Hose Operator"/>
+                <StringItem index="128" value="Hoseman"/>
+                <StringItem index="129" value="House Mover Helper"/>
+                <StringItem index="130" value="Hydraulic Jack Adjuster"/>
+                <StringItem index="131" value="Hydraulic Jack Operator"/>
+                <StringItem index="132" value="Hydroblaster"/>
+                <StringItem index="133" value="Inserter"/>
+                <StringItem index="134" value="Jackhammer Operator"/>
+                <StringItem index="135" value="Jet Man"/>
+                <StringItem index="136" value="Jet Worker"/>
+                <StringItem index="137" value="Jetting Machine Operator"/>
+                <StringItem index="138" value="Joint Filler"/>
+                <StringItem index="139" value="Joint Sealer"/>
+                <StringItem index="140" value="Kettle Firer"/>
+                <StringItem index="141" value="Kettle Operator"/>
+                <StringItem index="142" value="Kettle Worker"/>
+                <StringItem index="143" value="Kettleman"/>
+                <StringItem index="144" value="Labor Operator"/>
+                <StringItem index="145" value="Labor/Excavator"/>
+                <StringItem index="146" value="Laborer"/>
+                <StringItem index="147" value="Laborer-Demolition"/>
+                <StringItem index="148" value="Laborer-Operator"/>
+                <StringItem index="149" value="Laborer/Grade Check"/>
+                <StringItem index="150" value="Laborer/Key Man"/>
+                <StringItem index="151" value="Land Clearer"/>
+                <StringItem index="152" value="Lawn Sprinkler Installer"/>
+                <StringItem index="153" value="Liquid Floor and Wall Applier"/>
+                <StringItem index="154" value="Macadam Raker"/>
+                <StringItem index="155" value="Maintenance Worker"/>
+                <StringItem index="156" value="Manhole Stripper"/>
+                <StringItem index="157" value="Mastic Man"/>
+                <StringItem index="158" value="Mastic Worker"/>
+                <StringItem index="159" value="Mat Man"/>
+                <StringItem index="160" value="Mat Weaver"/>
+                <StringItem index="161" value="Mat Worker"/>
+                <StringItem index="162" value="Measurer"/>
+                <StringItem index="163" value="Mesh Man"/>
+                <StringItem index="164" value="Mesh Worker"/>
+                <StringItem index="165" value="Mixer"/>
+                <StringItem index="166" value="Mixer Tender"/>
+                <StringItem index="167" value="Mixing Plant Dumper"/>
+                <StringItem index="168" value="Mop Man"/>
+                <StringItem index="169" value="Mop Worker"/>
+                <StringItem index="170" value="Mortar Carrier"/>
+                <StringItem index="171" value="Mortar Maker"/>
+                <StringItem index="172" value="Mortar Man"/>
+                <StringItem index="173" value="Mortar Mixer"/>
+                <StringItem index="174" value="Mortar Worker"/>
+                <StringItem index="175" value="Mud Jack Nozzleman"/>
+                <StringItem index="176" value="Municipal Maintenance Worker"/>
+                <StringItem index="177" value="Nozzle Operator"/>
+                <StringItem index="178" value="Nozzleman"/>
+                <StringItem index="179" value="Nuclear Plant Construction Worker"/>
+                <StringItem index="180" value="Oil Heater Operator"/>
+                <StringItem index="181" value="Oil Heaterman"/>
+                <StringItem index="182" value="Paper Steamer"/>
+                <StringItem index="183" value="Pick and Shovel Man"/>
+                <StringItem index="184" value="Pick and Shovel Worker"/>
+                <StringItem index="185" value="Pile Header"/>
+                <StringItem index="186" value="Pile Trimmer"/>
+                <StringItem index="187" value="Piling Setter"/>
+                <StringItem index="188" value="Pin Puller"/>
+                <StringItem index="189" value="Pipe Cutter"/>
+                <StringItem index="190" value="Pipe Installer"/>
+                <StringItem index="191" value="Pipe Line Repairer"/>
+                <StringItem index="192" value="Pitman"/>
+                <StringItem index="193" value="Plaster Machine Tender"/>
+                <StringItem index="194" value="Playground Equipment Erector"/>
+                <StringItem index="195" value="Plowman"/>
+                <StringItem index="196" value="Plug Drill Operator"/>
+                <StringItem index="197" value="Pneumatic Riveter"/>
+                <StringItem index="198" value="Pole Setter"/>
+                <StringItem index="199" value="Post Framer"/>
+                <StringItem index="200" value="Pourer"/>
+                <StringItem index="201" value="Powder Loader"/>
+                <StringItem index="202" value="Power Washer"/>
+                <StringItem index="203" value="Precast Concrete Products Installer"/>
+                <StringItem index="204" value="Pressure Washer"/>
+                <StringItem index="205" value="Puddler"/>
+                <StringItem index="206" value="Pumper Helper"/>
+                <StringItem index="207" value="Punch Out Crew Member"/>
+                <StringItem index="208" value="Rail Layer"/>
+                <StringItem index="209" value="Rail Setter"/>
+                <StringItem index="210" value="Right-of-Way Clearer"/>
+                <StringItem index="211" value="Right-of-Way Cutter"/>
+                <StringItem index="212" value="Right-of-Way Man"/>
+                <StringItem index="213" value="Right-of-Way Worker"/>
+                <StringItem index="214" value="Riprap Man"/>
+                <StringItem index="215" value="Riprap Worker"/>
+                <StringItem index="216" value="Rivet Flunky"/>
+                <StringItem index="217" value="Riveter"/>
+                <StringItem index="218" value="Rock Worker"/>
+                <StringItem index="219" value="Rockman"/>
+                <StringItem index="220" value="Rod Placer"/>
+                <StringItem index="221" value="Rod Puller"/>
+                <StringItem index="222" value="Roughneck"/>
+                <StringItem index="223" value="Roustabout"/>
+                <StringItem index="224" value="Rubble Placer"/>
+                <StringItem index="225" value="Sand Blaster"/>
+                <StringItem index="226" value="Sand Hog"/>
+                <StringItem index="227" value="Sandblast Operator"/>
+                <StringItem index="228" value="Sandblaster"/>
+                <StringItem index="229" value="Scoop Filler"/>
+                <StringItem index="230" value="Screed Person"/>
+                <StringItem index="231" value="Screedman"/>
+                <StringItem index="232" value="Screedman/Laborer"/>
+                <StringItem index="233" value="Service Line Layer"/>
+                <StringItem index="234" value="Sewer Builder"/>
+                <StringItem index="235" value="Sewer Digger"/>
+                <StringItem index="236" value="Sewer Repairer"/>
+                <StringItem index="237" value="Shoveler"/>
+                <StringItem index="238" value="Sidewalk Repairer"/>
+                <StringItem index="239" value="Signaler"/>
+                <StringItem index="240" value="Skill Labor"/>
+                <StringItem index="241" value="Skilled Laborer"/>
+                <StringItem index="242" value="Skip Tender"/>
+                <StringItem index="243" value="Sledger"/>
+                <StringItem index="244" value="Slip Dumper"/>
+                <StringItem index="245" value="Slip Filler"/>
+                <StringItem index="246" value="Slip Injector and Applicator"/>
+                <StringItem index="247" value="Slipman"/>
+                <StringItem index="248" value="Snow Fence Erecto"/>
+                <StringItem index="249" value="Sounder"/>
+                <StringItem index="250" value="Sprayer"/>
+                <StringItem index="251" value="Steam Cleaning Machine Operator"/>
+                <StringItem index="252" value="Steel Layer"/>
+                <StringItem index="253" value="Steel Placer"/>
+                <StringItem index="254" value="Steel Post Installer"/>
+                <StringItem index="255" value="Stone Breaker"/>
+                <StringItem index="256" value="Straightedge Man"/>
+                <StringItem index="257" value="Straightedge Worker"/>
+                <StringItem index="258" value="Straw Boss"/>
+                <StringItem index="259" value="Stripe Marker"/>
+                <StringItem index="260" value="Swimming Pool Installer and Servicer"/>
+                <StringItem index="261" value="Tagman"/>
+                <StringItem index="262" value="Tamper"/>
+                <StringItem index="263" value="Tar Kettle Runner"/>
+                <StringItem index="264" value="Tar Man"/>
+                <StringItem index="265" value="Tar Pot Man"/>
+                <StringItem index="266" value="Tar Pot Worker"/>
+                <StringItem index="267" value="Tar Worker"/>
+                <StringItem index="268" value="Track Repair Laborer"/>
+                <StringItem index="269" value="Tuckpointer, Cleaner, Caulker"/>
+                <StringItem index="270" value="Tunnel Man"/>
+                <StringItem index="271" value="Tunnel Worker"/>
+                <StringItem index="272" value="Turntable Man"/>
+                <StringItem index="273" value="Turntable Worker"/>
+                <StringItem index="274" value="Union Laborer"/>
+                <StringItem index="275" value="Venetian Blind Installer"/>
+                <StringItem index="276" value="Vibrator Operator"/>
+                <StringItem index="277" value="Wagon Winder"/>
+                <StringItem index="278" value="Wall Cleaner"/>
+                <StringItem index="279" value="Wall Scraper"/>
+                <StringItem index="280" value="Wall Steamer"/>
+                <StringItem index="281" value="Wall Washer"/>
+                <StringItem index="282" value="Wallpaper Cleaner"/>
+                <StringItem index="283" value="Wallpaper Scraper"/>
+                <StringItem index="284" value="Water Proofer"/>
+                <StringItem index="285" value="Well Cleaner"/>
+                <StringItem index="286" value="Whitewasher"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Narrow" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Register"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel4">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" pref="205" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" pref="269" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="epm_list">
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="epm_listMouseClicked"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JList(dataModel)"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="jButton8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="X"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
