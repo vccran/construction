@@ -53,7 +53,7 @@ public class Map_Sto_Item extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(3, 38, 91));
 
-        jButton2.setText("SEARCH ITEM");
+        jButton2.setText("Map Item");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
