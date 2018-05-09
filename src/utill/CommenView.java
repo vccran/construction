@@ -158,7 +158,9 @@ public class CommenView extends javax.swing.JFrame {
 
     private void comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboActionPerformed
         param.clear();
-        param.add(buttonGroup1.getSelection().getActionCommand());
+        if (combo.getSelectedIndex() == 0) {
+            param.add(buttonGroup1.getSelection().getActionCommand());
+        }
         Show();
     }//GEN-LAST:event_comboActionPerformed
 

@@ -6,9 +6,7 @@
 package view;
 
 import database.MysqlConnect;
-import static java.lang.Thread.sleep;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -17,68 +15,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
-import static java.lang.Thread.sleep;
 import static java.lang.Thread.sleep;
 
 /**
@@ -146,11 +82,13 @@ public class Reg_Employee extends javax.swing.JFrame {
         radfemale = new javax.swing.JRadioButton();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jComboBox1 = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         epm_list = new javax.swing.JList(dataModel);
         jButton8 = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        txtsalary = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -308,15 +246,6 @@ public class Reg_Employee extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel14.setText("Employee Registration");
 
-        txtempid.setText("EMP-ID");
-
-        txtname.setText("Name");
-
-        txtaddress.setText("Address");
-
-        txtemail.setText("Email");
-
-        txtconnumber.setText("+94-XXXXXXXXXX");
         txtconnumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtconnumberActionPerformed(evt);
@@ -355,11 +284,11 @@ public class Reg_Employee extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Adz Worker", "Air Breaker Operator", "Air Drill Operator", "Air Gun Operator", "Air Hammer Operator", "Air Tool Operator", "Aluminum Pool Installer", "Asbestos Removal Worker", "Asphalt Distributor Tender", "Asphalt Heater Tender", "Asphalt Layer", "Asphalt Patcher", "Asphalt Paver", "Asphalt Raker", "Asphalt Smoother", "Asphalt Spreader", "Asphalt Tamper", "Asphalt Worker", "Auxiliary Equipment Tender", "Awning Hanger", "Awning Maker and Installer", "Axman", "Batch Dumper", "Beller", "Bellman", "Belter", "Beltman", "Biofuels Plant Construction Worker", "Black Top Raker", "Black Topper", "Bottom Man", "Bottom Worker", "Breast Worker", "Bridge Builder", "Broom Man", "Broom Worker", "Brush Cutter", "Building Cleaner", "Bull Float Finisher", "Burlap Man", "Burlap Worker", "Caisson Worker", "Cement Based Materials Pump Tender", "Cement Breake", "Cement Cutter", "Cement Mixer", "Chuck Tender", "Cinder Crew Worker", "Circular Saw Operator", "Cleaner", "Column Precaster", "Concrete Building Assembler", "Concrete Buster Operator", "Concrete Curer", "Concrete Handler", "Concrete Layer", "Concrete Mixer", "Concrete Pourer", "Concrete Puddler", "Concrete Spreader", "Concrete Vibrator Operator", "Concrete Worker", "Connection Worker", "Construction Coordinator", "Construction Craft Laborer", "Construction Inspector", "Construction Laborer", "Construction or Leak Gang Laborer", "Construction Person", "Construction Pit Worker", "Construction Trench Digger", "Construction Worker", "Core-Drill Operator", "ulvert Installer", "Curb and Gutter Laborer", "Demlition Hammer Operator", "Demolition Specialist", "Demolition Worker", "Demolitionist", "Digger", "Dirt Shoveler", "Ditch Digger", "Ditch Repairer", "Ditch Rider", "Ditcher", "Dope Pourer", "Dopeman", "Doper", "Dowel Pin Man", "Dowel Pin Worker", "Drain Layer", "Drapery Hanger", "Dredge Pipe Operator", "Dredge Pipeman", "Drifter", "Driller Helper", "Drop Crew Laborer", "Dust Handler", "Earth Mover", "Fence Post Driver", "Fire Pot Operator", "Flare Man", "Flare Worker", "Form Stripper", "General Laborer", "Grade Checker", "Grade Tamper", "Grader", "Gravel Screener", "Grit Blaster", "Grommet Man", "Grommet Worker", "Ground Hand", "Ground Worker", "Groundman", "Groundsman", "Grout Machine Operator", "Grout Worker", "Groutman", "Grunt", "Handyman", "Helper", "High Man", "High Worker", "Hod Carrier", "Hole Digger", "Home Performance Laborer", "Hose Operator", "Hoseman", "House Mover Helper", "Hydraulic Jack Adjuster", "Hydraulic Jack Operator", "Hydroblaster", "Inserter", "Jackhammer Operator", "Jet Man", "Jet Worker", "Jetting Machine Operator", "Joint Filler", "Joint Sealer", "Kettle Firer", "Kettle Operator", "Kettle Worker", "Kettleman", "Labor Operator", "Labor/Excavator", "Laborer", "Laborer-Demolition", "Laborer-Operator", "Laborer/Grade Check", "Laborer/Key Man", "Land Clearer", "Lawn Sprinkler Installer", "Liquid Floor and Wall Applier", "Macadam Raker", "Maintenance Worker", "Manhole Stripper", "Mastic Man", "Mastic Worker", "Mat Man", "Mat Weaver", "Mat Worker", "Measurer", "Mesh Man", "Mesh Worker", "Mixer", "Mixer Tender", "Mixing Plant Dumper", "Mop Man", "Mop Worker", "Mortar Carrier", "Mortar Maker", "Mortar Man", "Mortar Mixer", "Mortar Worker", "Mud Jack Nozzleman", "Municipal Maintenance Worker", "Nozzle Operator", "Nozzleman", "Nuclear Plant Construction Worker", "Oil Heater Operator", "Oil Heaterman", "Paper Steamer", "Pick and Shovel Man", "Pick and Shovel Worker", "Pile Header", "Pile Trimmer", "Piling Setter", "Pin Puller", "Pipe Cutter", "Pipe Installer", "Pipe Line Repairer", "Pitman", "Plaster Machine Tender", "Playground Equipment Erector", "Plowman", "Plug Drill Operator", "Pneumatic Riveter", "Pole Setter", "Post Framer", "Pourer", "Powder Loader", "Power Washer", "Precast Concrete Products Installer", "Pressure Washer", "Puddler", "Pumper Helper", "Punch Out Crew Member", "Rail Layer", "Rail Setter", "Right-of-Way Clearer", "Right-of-Way Cutter", "Right-of-Way Man", "Right-of-Way Worker", "Riprap Man", "Riprap Worker", "Rivet Flunky", "Riveter", "Rock Worker", "Rockman", "Rod Placer", "Rod Puller", "Roughneck", "Roustabout", "Rubble Placer", "Sand Blaster", "Sand Hog", "Sandblast Operator", "Sandblaster", "Scoop Filler", "Screed Person", "Screedman", "Screedman/Laborer", "Service Line Layer", "Sewer Builder", "Sewer Digger", "Sewer Repairer", "Shoveler", "Sidewalk Repairer", "Signaler", "Skill Labor", "Skilled Laborer", "Skip Tender", "Sledger", "Slip Dumper", "Slip Filler", "Slip Injector and Applicator", "Slipman", "Snow Fence Erecto", "Sounder", "Sprayer", "Steam Cleaning Machine Operator", "Steel Layer", "Steel Placer", "Steel Post Installer", "Stone Breaker", "Straightedge Man", "Straightedge Worker", "Straw Boss", "Stripe Marker", "Swimming Pool Installer and Servicer", "Tagman", "Tamper", "Tar Kettle Runner", "Tar Man", "Tar Pot Man", "Tar Pot Worker", "Tar Worker", "Track Repair Laborer", "Tuckpointer, Cleaner, Caulker", "Tunnel Man", "Tunnel Worker", "Turntable Man", "Turntable Worker", "Union Laborer", "Venetian Blind Installer", "Vibrator Operator", "Wagon Winder", "Wall Cleaner", "Wall Scraper", "Wall Steamer", "Wall Washer", "Wallpaper Cleaner", "Wallpaper Scraper", "Water Proofer", "Well Cleaner", "Whitewasher" }));
 
-        jButton1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jButton1.setText("Register");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSave.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        btnSave.setText("Register");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSaveActionPerformed(evt);
             }
         });
 
@@ -394,55 +323,67 @@ public class Reg_Employee extends javax.swing.JFrame {
             }
         });
 
+        jLabel22.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jLabel22.setText("Salary");
+
+        txtsalary.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtsalaryActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(105, 105, 105)
-                                .addComponent(txtempid, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel21)
-                                .addGap(127, 127, 127)
-                                .addComponent(txtaddress))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel15)
-                                            .addComponent(jLabel16))
-                                        .addGap(139, 139, 139))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel18)
-                                            .addComponent(jLabel20)
-                                            .addComponent(jLabel19))
-                                        .addGap(84, 84, 84)))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtemail, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtconnumber)
-                                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(radmale)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(radfemale))))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(244, 244, 244)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(272, 272, 272)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel9)
+                                    .addGap(105, 105, 105)
+                                    .addComponent(txtempid, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel21)
+                                    .addGap(127, 127, 127)
+                                    .addComponent(txtaddress))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel15)
+                                                .addComponent(jLabel16))
+                                            .addGap(139, 139, 139))
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel18)
+                                                .addComponent(jLabel20)
+                                                .addComponent(jLabel19))
+                                            .addGap(84, 84, 84)))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtemail, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtconnumber)
+                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(radmale)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(radfemale))
+                                        .addComponent(txtsalary, javax.swing.GroupLayout.Alignment.TRAILING)))))))
                 .addGap(97, 97, 97)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -495,14 +436,18 @@ public class Reg_Employee extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel19)
-                            .addComponent(txtconnumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtconnumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtsalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel22)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
         );
 
@@ -539,20 +484,24 @@ public class Reg_Employee extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtconnumberActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         try {
 
             if (txtempid.getText().trim().isEmpty()) {
                 txtempid.setText("0");
             }
-        String sql = "INSERT INTO reg_employee (empid, name, address, email,sex,dob,emp_type,contactno,st)  VALUES('" + Integer.parseInt(txtempid.getText().trim()) + "',"
+        String sql = "INSERT INTO reg_employee (empid, name, address, email,sex,dob,emp_type,contactno,salary,st)  VALUES('" + Integer.parseInt(txtempid.getText().trim()) + "',"
                     + "'" + txtname.getText() + "',"
                     + "'" + txtaddress.getText()  + "',"
                     + "'" + txtemail.getText().trim() + "',"
                     + "'" + buttonGroup1.getSelection().getActionCommand() + "',"
                     + "'" + dateformat.format(jDateChooser1.getDate()) + "',"
                     + "'" + jComboBox1.getSelectedItem() + "',"
-                    + "'" + txtconnumber.getText() + "','A') ON DUPLICATE KEY UPDATE name='"+ txtname.getText() +"',address='"+txtaddress.getText()+"',email='"+txtemail.getText().trim()+"',sex='"+buttonGroup1.getSelection().getActionCommand().toString()+"',dob='"+dateformat.format(jDateChooser1.getDate())+"',emp_type='"+jComboBox1.getSelectedItem()+"',contactno='"+txtconnumber.getText().trim()+"',st='A'";
+                    + "'" + txtconnumber.getText() + "',"
+                    + "'" + txtsalary.getText() + "', 'A') "
+                + "ON DUPLICATE KEY UPDATE name='"+ txtname.getText() +"',address='"+txtaddress.getText()+"',email='"+txtemail.getText().trim()+"'"
+                + ",sex='"+buttonGroup1.getSelection().getActionCommand().toString()+"',dob='"+dateformat.format(jDateChooser1.getDate())+"'"
+                + ",emp_type='"+jComboBox1.getSelectedItem()+"',contactno='"+txtconnumber.getText().trim()+"',st='A',salary='" + txtsalary.getText() + "'";
    
             int tmp = _dbConnection.insert(sql);
 
@@ -563,7 +512,7 @@ public class Reg_Employee extends javax.swing.JFrame {
             e.printStackTrace();
             JOptionPane.showMessageDialog(rootPane, e.getLocalizedMessage());
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     private void epm_listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_epm_listMouseClicked
 
@@ -589,6 +538,7 @@ public class Reg_Employee extends javax.swing.JFrame {
                 jDateChooser1.setDate(resultSet.getDate("dob"));
                 jComboBox1.setSelectedItem(resultSet.getString("emp_type"));
                 txtconnumber.setText(resultSet.getString("contactno"));
+                txtsalary.setText(resultSet.getString("salary"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
@@ -653,6 +603,10 @@ public class Reg_Employee extends javax.swing.JFrame {
         new Reg_Vehicle().show();
         this.dispose();
     }//GEN-LAST:event_btnVeh1ActionPerformed
+
+    private void txtsalaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsalaryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtsalaryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -720,6 +674,7 @@ public class Reg_Employee extends javax.swing.JFrame {
     private javax.swing.JButton btnCli1;
     private javax.swing.JButton btnEmp1;
     private javax.swing.JButton btnIte1;
+    private javax.swing.JButton btnSave;
     private javax.swing.JButton btnSto1;
     private javax.swing.JButton btnSup1;
     private javax.swing.JButton btnToo1;
@@ -728,7 +683,6 @@ public class Reg_Employee extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JList epm_list;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox jComboBox1;
     private com.toedter.calendar.JDateChooser jDateChooser1;
@@ -741,6 +695,7 @@ public class Reg_Employee extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel9;
@@ -756,6 +711,7 @@ public class Reg_Employee extends javax.swing.JFrame {
     private javax.swing.JTextField txtemail;
     private javax.swing.JTextField txtempid;
     private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtsalary;
     // End of variables declaration//GEN-END:variables
 
     private void GetEmploye() {

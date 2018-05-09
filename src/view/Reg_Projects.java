@@ -52,15 +52,13 @@ public class Reg_Projects extends javax.swing.JFrame {
         try {
             dataModel = new DefaultListModel();
             ResultSet rs = _dbConnection.query("SELECT * FROM reg_stores r WHERE r.st='A';");
+            cmbstore.removeAllItems();
             while (rs.next()) {
                 cmbstore.addItem(rs.getString("stores_id") + "--" + rs.getString("name"));
-//               jComboBox12.addItem(rs.getString(null));
-//                dataModel.addElement(rs.getString("iid") + "--" + rs.getString("iname")+"_"+ rs.getString("icode"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
     @SuppressWarnings("unchecked")

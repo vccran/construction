@@ -35,7 +35,7 @@ public class Income_Voucher extends javax.swing.JFrame {
     private void GetVouchers() {
         try {
             dataModel = new DefaultListModel();
-            ResultSet rs = _dbConnection.query("SELECT * FROM `accounts` WHERE status ='A' and vou_typ='"+vou_type+"'");
+            ResultSet rs = _dbConnection.query("SELECT * FROM `accounts` WHERE st ='A' and vou_typ='"+vou_type+"'");
             while (rs.next()) {
                 dataModel.addElement(rs.getString("aid") + "--" + rs.getString("vou_no")+"_"+ rs.getDouble("amount"));
             }
@@ -483,7 +483,7 @@ public class Income_Voucher extends javax.swing.JFrame {
                     + "`description`,"//4
                     + "`amount`,"//5
                     + "`vou_type`,"//6
-                    + "`status`"//13                   
+                    + "`st`"//13                   
                     + ") VALUES \n"
                     + " ('" + txtvouno.getText().trim() + "',"
                     + "'" + dateformat.format(jDateChooser1.getDate()) + "',"
@@ -535,7 +535,7 @@ public class Income_Voucher extends javax.swing.JFrame {
             String[] parts = cli_list.getSelectedValue().toString().split("--");
             int part1 = Integer.parseInt(parts[0]); // 004
             System.out.println(part1);
-            String sql = "UPDATE accounts SET status = 'D' WHERE aid =" + part1 + "";
+            String sql = "UPDATE accounts SET st = 'D' WHERE aid =" + part1 + "";
             //            MysqlConnect.db.query(sql);
             int tmp = _dbConnection.insert(sql);
             new Income_Voucher().show();

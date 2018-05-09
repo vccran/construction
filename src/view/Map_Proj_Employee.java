@@ -37,6 +37,7 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
         try {
             dataModel = new DefaultListModel();
             ResultSet rs = _dbConnection.query("SELECT * FROM `reg_projects` WHERE st ='A';");
+            cmbProject.removeAllItems();
             while (rs.next()) {
                 cmbProject.addItem(rs.getString("proid") + "--" + rs.getString("name"));
             }
@@ -51,6 +52,7 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
             dataModel = new DefaultListModel();
             ResultSet rs = _dbConnection.query("SELECT * FROM reg_employee r WHERE r.st='A' and empid not in "
                     + "(select employeeid from mapproj_employee where projectid='"+cmbProject.getSelectedItem().toString()+"' and st <> 'D')");
+            cmbEmployee.removeAllItems();
             while (rs.next()) {
                 cmbEmployee.addItem(rs.getString("empid") + "--" + rs.getString("name"));
 //               jComboBox12.addItem(rs.getString(null));
