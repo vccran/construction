@@ -5,6 +5,8 @@
  */
 package utill;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author viraj.k
@@ -15,14 +17,21 @@ public class General {
 
     }
 
-    public String getTableQuery(String type) {
+    public String getTableQuery(String type, ArrayList param) {
         String reply = "SELECT * FROM (";
+        String condition = " ";
+        if (!(param == null || param.isEmpty() || param.size() < 1)) {
+            for (Object object : param) {
+                condition += condition + object;
+            }
+        }
         switch (type) {
             case "1"://All Vehicals
                 reply += "SELECT a.NAME AS ProjectName,location AS ProjectLocation,TYPE AS PrType ,\n"
                         + "noofemp AS NoEmployees,noofveh AS NoVehicals,noofofficers AS NoOfficers,VALUE,\n"
                         + "(SELECT NAME FROM reg_stores WHERE `stores_id`=a.`storeid`) AS store\n"
-                        + "FROM reg_projects a";
+                        + "FROM reg_projects a "
+                        + " where 1=1 " +condition;
                 break;
             case "2"://EMployees on Project
                 reply += "SELECT b.`proid`AS ProjectID,b.`name`AS projectname,c.`empid`AS EmployeeID,c.`name`AS employeename "
@@ -30,13 +39,14 @@ public class General {
                         + "FROM  mapproj_employee a\n"
                         + "INNER JOIN `reg_projects` b ON a.`projectid`=b.`proid` AND b.`st` != 'D'\n"
                         + "INNER JOIN `reg_employee` c ON a.`employeeid`=c.`empid` AND c.`st` != 'D'\n"
-                        + "WHERE a.`st` ='A'";
+                        + "WHERE a.`st` ='A' " + condition;
                 break;
             case "3"://All Vans
                 reply += "SELECT a.storeid,a.NAME AS ProjectName,location AS ProjectLocation,TYPE AS PrType ,\n"
                         + "noofemp AS NoEmployees,noofveh AS NoVehicals,noofofficers AS NoOfficers,VALUE,\n"
                         + "b.`name` AS store\n"
-                        + "FROM reg_projects a LEFT OUTER JOIN reg_stores b ON a.storeid=b.stores_id";
+                        + "FROM reg_projects a LEFT OUTER JOIN reg_stores b ON a.storeid=b.stores_id "
+                        + " where 1=1 " +condition;
                 break;
             case "4"://All Bikes
                 reply += "SELECT * FROM tbl_vehical a INNER JOIN tbl_bike  b ON (a.idtbl_vehical=b.tbl_vehical_idtbl_vehical)";

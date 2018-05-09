@@ -6,6 +6,7 @@
 package utill;
 
 import database.MysqlConnect;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +15,7 @@ import database.MysqlConnect;
 public class CommenView extends javax.swing.JFrame {
 
     General controller = null;
+    ArrayList param;
 
     /**
      * Creates new form Home
@@ -21,6 +23,7 @@ public class CommenView extends javax.swing.JFrame {
     public CommenView() {
         initComponents();
         controller = new General();
+        param = new ArrayList();
     }
 
     /**
@@ -37,6 +40,10 @@ public class CommenView extends javax.swing.JFrame {
         tblinfo = new javax.swing.JTable();
         btnShow = new javax.swing.JButton();
         combo = new javax.swing.JComboBox<>();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -82,13 +89,58 @@ public class CommenView extends javax.swing.JFrame {
         getContentPane().add(combo);
         combo.setBounds(10, 50, 310, 30);
 
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setSelected(true);
+        jRadioButton1.setText("All Projects");
+        jRadioButton1.setActionCommand("and st!='D'");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRadioButton1);
+        jRadioButton1.setBounds(10, 100, 190, 23);
+
+        buttonGroup1.add(jRadioButton4);
+        jRadioButton4.setText("Deleted Projects");
+        jRadioButton4.setActionCommand("and st='D'");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRadioButton4);
+        jRadioButton4.setBounds(10, 160, 190, 23);
+
+        buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setText("Done Projects");
+        jRadioButton3.setActionCommand("and st='F'");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRadioButton3);
+        jRadioButton3.setBounds(10, 140, 190, 23);
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setText("Ongoing Projects");
+        jRadioButton2.setActionCommand("and st='A'");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jRadioButton2);
+        jRadioButton2.setBounds(10, 120, 190, 23);
+
         setSize(new java.awt.Dimension(1269, 719));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowActionPerformed
 //        Show(buttonGroup1.getSelection().getActionCommand());
-        Show(combo.getSelectedIndex() + 1);
+        Show();
     }//GEN-LAST:event_btnShowActionPerformed
 
     private void tblinfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblinfoMouseClicked
@@ -105,8 +157,26 @@ public class CommenView extends javax.swing.JFrame {
     }//GEN-LAST:event_comboItemStateChanged
 
     private void comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboActionPerformed
-        Show(combo.getSelectedIndex() + 1);
+        param.clear();
+        param.add(buttonGroup1.getSelection().getActionCommand());
+        Show();
     }//GEN-LAST:event_comboActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        comboActionPerformed(evt);
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        comboActionPerformed(evt);
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        comboActionPerformed(evt);
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        comboActionPerformed(evt);
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,18 +218,21 @@ public class CommenView extends javax.swing.JFrame {
     private javax.swing.JButton btnShow;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> combo;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblinfo;
     // End of variables declaration//GEN-END:variables
 
-    private void Show(Object type) {
-
+    private void Show() {
+        Integer type = combo.getSelectedIndex() + 1;
         try {
-            if (controller.getTableQuery(type.toString()).equals("")) {
+            if (controller.getTableQuery(type.toString(), param).equals("")) {
                 throw new Exception();
             }
-            if (!Public.FillTable(tblinfo, controller.getTableQuery(type.toString()), MysqlConnect.getDbCon()))
-            {
+            if (!Public.FillTable(tblinfo, controller.getTableQuery(type.toString(), param), MysqlConnect.getDbCon())) {
                 throw new Exception();
             }
         } catch (Exception e) {
