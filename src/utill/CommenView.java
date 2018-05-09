@@ -5,9 +5,7 @@
  */
 package utill;
 
-import utill.General;
 import database.MysqlConnect;
-import utill.Public;
 
 /**
  *
