@@ -5,17 +5,80 @@
  */
 package view;
 
+import database.MysqlConnect;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Sachintha
  */
 public class Map_Proj_Employee extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Employee_Search
-     */
+    private final MysqlConnect _dbConnection;
+    private final SimpleDateFormat dateformat;
+    DefaultListModel dataModel;
+
     public Map_Proj_Employee() {
+        _dbConnection = MysqlConnect.getDbCon();
+        dateformat = new SimpleDateFormat("yyyy-MM-dd");
+        GetMappings();
         initComponents();
+        GetProject();
+        GetEmployee();
+    }
+
+    private void GetProject() {
+        try {
+            dataModel = new DefaultListModel();
+            ResultSet rs = _dbConnection.query("SELECT * FROM `reg_projects` WHERE st ='A';");
+            while (rs.next()) {
+                cmbProject.addItem(rs.getString("proid") + "--" + rs.getString("name"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    private void GetEmployee() {
+        try {
+            dataModel = new DefaultListModel();
+            ResultSet rs = _dbConnection.query("SELECT * FROM reg_employee r WHERE r.st='A' and empid not in "
+                    + "(select employeeid from mapproj_employee where projectid='"+cmbProject.getSelectedItem().toString()+"' and st <> 'D')");
+            while (rs.next()) {
+                cmbEmployee.addItem(rs.getString("empid") + "--" + rs.getString("name"));
+//               jComboBox12.addItem(rs.getString(null));
+//                dataModel.addElement(rs.getString("iid") + "--" + rs.getString("iname")+"_"+ rs.getString("icode"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    private void GetMappings() {
+        try {
+            dataModel = new DefaultListModel();
+            ResultSet rs = _dbConnection.query("SELECT a.`peid`,b.`proid`,b.`name`AS projectname,c.`empid`,c.`name`AS employeename FROM \n"
+                    + "mapproj_employee a\n"
+                    + "INNER JOIN `reg_projects` b ON a.`projectid`=b.`proid` AND b.`st` != 'D'\n"
+                    + "INNER JOIN `reg_employee` c ON a.`employeeid`=c.`empid` AND c.`st` != 'D'\n"
+                    + "WHERE a.`st` ='A'");
+            while (rs.next()) {
+                dataModel.addElement(rs.getString("peid") + "--" 
+                        + rs.getString("proid") + "-" + rs.getString("projectname") 
+                        + rs.getString("empid") + "-" + rs.getString("employeename"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     /**
@@ -36,16 +99,13 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        cmbProject = new javax.swing.JComboBox();
+        cmbEmployee = new javax.swing.JComboBox();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        cli_list = new javax.swing.JList(dataModel);
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -128,79 +188,61 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
         );
 
         jLabel5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jLabel5.setText("Project ID");
-
-        jLabel6.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jLabel6.setText("Project Name");
+        jLabel5.setText("Project");
 
         jLabel7.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel7.setText("Employee ID");
 
-        jLabel8.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jLabel8.setText("Employee Name");
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-
         jButton1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(204, 0, 0));
-        jButton1.setText("ADD");
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Pro.ID", "Pro.Name", "Employee ID", "Emplyee Name", "Salary Amount", "Work Location"
+        jButton1.setText("Delete");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        });
+
+        cli_list.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cli_listMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(cli_list);
+
+        jButton3.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(204, 0, 0));
+        jButton3.setText("ADD");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(29, 29, 29))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(26, 26, 26)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(19, 19, 19)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cmbProject, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(117, 117, 117)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cmbEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(567, 567, 567)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)))
+                .addGap(29, 29, 29))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,20 +250,16 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
                 .addGap(77, 77, 77)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(cmbProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(210, Short.MAX_VALUE))
+                    .addComponent(jButton1)
+                    .addComponent(jButton3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -253,13 +291,78 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2MouseClicked
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            if (cli_list.getSelectedValue() == null) {
+                JOptionPane.showMessageDialog(this, "Please select in list");
+                return;
+            }
+            String[] parts = cli_list.getSelectedValue().toString().split("--");
+            int part1 = Integer.parseInt(parts[0]); // 004
+            System.out.println(part1);
+            String sql = "delete from mapproj_employee WHERE peid =" + part1 + "";
+//            String sql = "UPDATE mapproj_employee SET st = 'D' WHERE peid =" + part1 + "";
+            //            MysqlConnect.db.query(sql);
+            int tmp = _dbConnection.insert(sql);
+            new Map_Proj_Employee().show();
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    private void cli_listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cli_listMouseClicked
+
+        try {
+            String[] parts = cli_list.getSelectedValue().toString().split("--");
+            String part1 = parts[0]; // 004
+
+            //            JOptionPane.showMessageDialog(this, part1);
+            ResultSet rs = MysqlConnect.getDbCon().query("SELECT a.`peid`,b.`proid`,b.`name`AS projectname,c.`empid`,c.`name`AS employeename FROM  \n"
+                    + "mapproj_employee a\n"
+                    + "INNER JOIN `reg_projects` b ON a.`projectid`=b.`proid` AND b.`st` != 'D'\n"
+                    + "INNER JOIN `reg_employee` c ON a.`employeeid`=c.`empid` AND c.`st` != 'D'\n"
+                    + " WHERE a.peid='" + part1 + "' and a.`st` ='A'");
+            if (rs.next()) {
+                cmbProject.setSelectedItem(rs.getString("proid") + "--" + rs.getString("projectname") );
+                cmbEmployee.setSelectedItem(rs.getString("empid") + "--" + rs.getString("employeename"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_cli_listMouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            if (!cmbProject.getSelectedItem().toString().contains("--")) {
+                throw new Exception("Empty ProjectID");
+            }
+            if (!cmbEmployee.getSelectedItem().toString().contains("--")) {
+                 throw new Exception("Empty ProjectID");
+            }
+            
+            String sql = "INSERT INTO `mapproj_employee` ("
+                    + "`projectid`," //1
+                    + "`employeeid`,"//2           
+                    + "`st`"//3       
+                    + ") VALUES \n"
+                    + " ('" + cmbProject.getSelectedItem().toString().split("--")[0] + "',"
+                    + "'" + cmbEmployee.getSelectedItem().toString().split("--")[0] + "',"
+                    + "'A')ON DUPLICATE KEY UPDATE "
+                    + " projectid='" + cmbProject.getSelectedItem().toString().split("--")[0]  + "',"
+                    + " employeeid='" + cmbEmployee.getSelectedItem().toString().split("--")[0]  + "', st='A'";
+            System.out.println(sql);
+            int tmp = _dbConnection.insert(sql);
+
+            System.out.println("Key : " + tmp);
+            new Map_Proj_Employee().show();
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(Reg_Supplier.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            Logger.getLogger(Map_Proj_Employee.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -299,23 +402,20 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Clocklbl;
+    private javax.swing.JList cli_list;
+    private javax.swing.JComboBox cmbEmployee;
+    private javax.swing.JComboBox cmbProject;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

@@ -35,7 +35,7 @@ public class Income_Voucher extends javax.swing.JFrame {
     private void GetVouchers() {
         try {
             dataModel = new DefaultListModel();
-            ResultSet rs = _dbConnection.query("SELECT * FROM `accounts` WHERE status ='A';");
+            ResultSet rs = _dbConnection.query("SELECT * FROM `accounts` WHERE status ='A' and vou_typ='"+vou_type+"'");
             while (rs.next()) {
                 dataModel.addElement(rs.getString("aid") + "--" + rs.getString("vou_no")+"_"+ rs.getDouble("amount"));
             }
