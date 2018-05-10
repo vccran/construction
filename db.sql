@@ -79,6 +79,34 @@ INSERT INTO `accounts` (`aid`,`vou_no`,`adate`,`description`,`amount`,`vou_type`
 
 
 --
+-- Table structure for table `bhaghya`.`login`
+--
+
+DROP TABLE IF EXISTS `login`;
+CREATE TABLE `login` (
+  `idlogin` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
+  `isactive` int(11) DEFAULT NULL,
+  `usertype` int(11) DEFAULT NULL,
+  `user_iduser` int(11) NOT NULL,
+  PRIMARY KEY (`idlogin`),
+  UNIQUE KEY `iduser_UNIQUE` (`username`),
+  KEY `fk_login_user1` (`user_iduser`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bhaghya`.`login`
+--
+
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` (`idlogin`,`username`,`password`,`isactive`,`usertype`,`user_iduser`) VALUES 
+ (1,'s','123',1,1,1),
+ (2,'demo','demo',1,2,2);
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+
+
+--
 -- Table structure for table `bhaghya`.`map_boq_item`
 --
 
@@ -103,6 +131,32 @@ INSERT INTO `map_boq_item` (`mbiid`,`bid`,`iid`,`st`,`qty`) VALUES
  (5,5,3,'A',100),
  (6,5,2,'A',265);
 /*!40000 ALTER TABLE `map_boq_item` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `bhaghya`.`map_store_item`
+--
+
+DROP TABLE IF EXISTS `map_store_item`;
+CREATE TABLE `map_store_item` (
+  `msiid` int(11) NOT NULL AUTO_INCREMENT,
+  `sid` int(11) DEFAULT NULL,
+  `iid` int(11) DEFAULT NULL,
+  `qty` double DEFAULT NULL,
+  `st` varchar(2) DEFAULT 'A',
+  PRIMARY KEY (`msiid`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bhaghya`.`map_store_item`
+--
+
+/*!40000 ALTER TABLE `map_store_item` DISABLE KEYS */;
+INSERT INTO `map_store_item` (`msiid`,`sid`,`iid`,`qty`,`st`) VALUES 
+ (2,10,1,100,'A'),
+ (3,10,2,200,'A'),
+ (4,10,3,10,'A');
+/*!40000 ALTER TABLE `map_store_item` ENABLE KEYS */;
 
 
 --
