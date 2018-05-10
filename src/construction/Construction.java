@@ -6,6 +6,7 @@
 package construction;
 
 import java.awt.Window;
+import login.LoginGUI;
 import view.HomeUI;
 
 /**
@@ -48,7 +49,8 @@ public class Construction {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HomeUI().setVisible(true);
+                new LoginGUI().setVisible(true);
+//                new HomeUI().setVisible(true);
 //                new SaveForm().setVisible(true);
             }
         });
