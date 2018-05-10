@@ -278,7 +278,8 @@ public class HomeUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+        BOQ reg = new BOQ();
+        reg.show();
     }//GEN-LAST:event_jButton10ActionPerformed
 
     /**

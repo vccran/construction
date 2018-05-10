@@ -35,7 +35,6 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
 
     private void GetProject() {
         try {
-            dataModel = new DefaultListModel();
             ResultSet rs = _dbConnection.query("SELECT * FROM `reg_projects` WHERE st ='A';");
             cmbProject.removeAllItems();
             while (rs.next()) {
@@ -49,7 +48,6 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
 
     private void GetEmployee() {
         try {
-            dataModel = new DefaultListModel();
             ResultSet rs = _dbConnection.query("SELECT * FROM reg_employee r WHERE r.st='A' and empid not in "
                     + "(select employeeid from mapproj_employee where projectid='"+cmbProject.getSelectedItem().toString()+"' and st <> 'D')");
             cmbEmployee.removeAllItems();
@@ -189,11 +187,17 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel1.setLayout(null);
+
         jLabel5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel5.setText("Project");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(19, 77, 37, 30);
 
         jLabel7.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel7.setText("Employee ID");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(20, 120, 65, 30);
 
         jButton1.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(204, 0, 0));
@@ -203,6 +207,14 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(275, 170, 80, 30);
+
+        jPanel1.add(cmbProject);
+        cmbProject.setBounds(110, 80, 240, 30);
+
+        jPanel1.add(cmbEmployee);
+        cmbEmployee.setBounds(110, 120, 240, 30);
 
         cli_list.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -210,6 +222,9 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
             }
         });
         jScrollPane2.setViewportView(cli_list);
+
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(500, 80, 270, 380);
 
         jButton3.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(204, 0, 0));
@@ -219,50 +234,8 @@ public class Map_Proj_Employee extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmbProject, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cmbEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(567, 567, 567)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
-                .addGap(29, 29, 29))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel7)
-                    .addComponent(cmbProject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel1.add(jButton3);
+        jButton3.setBounds(200, 170, 70, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

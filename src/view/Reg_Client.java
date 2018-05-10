@@ -819,7 +819,6 @@ public class Reg_Client extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
     
 }
