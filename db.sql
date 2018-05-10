@@ -57,20 +57,52 @@ CREATE TABLE `accounts` (
   `category` varchar(50) DEFAULT 'Other',
   `toperson` int(11) DEFAULT '0',
   `project` int(11) DEFAULT '0',
+  `paytype` varchar(50) DEFAULT 'Cash',
   PRIMARY KEY (`aid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bhaghya`.`accounts`
 --
 
 /*!40000 ALTER TABLE `accounts` DISABLE KEYS */;
-INSERT INTO `accounts` (`aid`,`vou_no`,`adate`,`description`,`amount`,`vou_type`,`st`,`category`,`toperson`,`project`) VALUES 
- (1,'V01','2018-05-01','sds',100,'C','A',NULL,NULL,NULL),
- (2,'2','2018-05-01','xaxa',50,'D','A',NULL,NULL,NULL),
- (3,'0','2018-05-01','xzxz',50000,'D','A','Salary',7,1),
- (4,'0','2018-06-20','xzxz',22000,'D','A','Salary',7,1);
+INSERT INTO `accounts` (`aid`,`vou_no`,`adate`,`description`,`amount`,`vou_type`,`st`,`category`,`toperson`,`project`,`paytype`) VALUES 
+ (1,'V01','2018-05-01','sds',100,'C','A','Other',NULL,NULL,'cash'),
+ (2,'V01','2018-05-01','xaxa',100,'D','A','Other',2,1,'cheque'),
+ (3,'V02','2018-05-01','xzxz',50000,'D','A','Salary',2,1,'credit'),
+ (4,'V03','2018-06-20','xzxz',22000,'D','A','Salary',2,1,'cash'),
+ (5,'V01','2018-05-01','sds',1000,'C','A','Other',0,0,'cash'),
+ (7,'V01','2018-05-01','sds',1000,'C','A','Other',0,0,'credit'),
+ (8,'V01','2018-05-01','sds',1000,'C','D','Other',0,0,'cash'),
+ (9,'V01','2018-05-01','sds',1000,'C','A','Other',0,0,'cheque');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `bhaghya`.`map_boq_item`
+--
+
+DROP TABLE IF EXISTS `map_boq_item`;
+CREATE TABLE `map_boq_item` (
+  `mbiid` int(11) NOT NULL AUTO_INCREMENT,
+  `bid` int(11) DEFAULT NULL,
+  `iid` int(11) DEFAULT NULL,
+  `st` varchar(5) DEFAULT NULL,
+  `qty` int(11) DEFAULT NULL,
+  PRIMARY KEY (`mbiid`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bhaghya`.`map_boq_item`
+--
+
+/*!40000 ALTER TABLE `map_boq_item` DISABLE KEYS */;
+INSERT INTO `map_boq_item` (`mbiid`,`bid`,`iid`,`st`,`qty`) VALUES 
+ (1,5,2,'D',100),
+ (2,5,1,'A',500),
+ (5,5,3,'A',100),
+ (6,5,2,'A',265);
+/*!40000 ALTER TABLE `map_boq_item` ENABLE KEYS */;
 
 
 --
@@ -84,7 +116,7 @@ CREATE TABLE `mapproj_employee` (
   `employeeid` int(11) DEFAULT NULL,
   `st` varchar(2) DEFAULT 'A',
   PRIMARY KEY (`peid`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bhaghya`.`mapproj_employee`
@@ -93,9 +125,32 @@ CREATE TABLE `mapproj_employee` (
 /*!40000 ALTER TABLE `mapproj_employee` DISABLE KEYS */;
 INSERT INTO `mapproj_employee` (`peid`,`projectid`,`employeeid`,`st`) VALUES 
  (9,1,2,'A'),
- (10,1,5,'A'),
- (11,1,7,'A');
+ (12,1,5,'A'),
+ (13,1,7,'A');
 /*!40000 ALTER TABLE `mapproj_employee` ENABLE KEYS */;
+
+
+--
+-- Table structure for table `bhaghya`.`reg_boq`
+--
+
+DROP TABLE IF EXISTS `reg_boq`;
+CREATE TABLE `reg_boq` (
+  `bid` int(11) NOT NULL AUTO_INCREMENT,
+  `st` varchar(5) DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`bid`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bhaghya`.`reg_boq`
+--
+
+/*!40000 ALTER TABLE `reg_boq` DISABLE KEYS */;
+INSERT INTO `reg_boq` (`bid`,`st`,`name`) VALUES 
+ (4,'A','TestBOQ'),
+ (5,'A','Test');
+/*!40000 ALTER TABLE `reg_boq` ENABLE KEYS */;
 
 
 --
@@ -189,9 +244,9 @@ CREATE TABLE `reg_item` (
 
 /*!40000 ALTER TABLE `reg_item` DISABLE KEYS */;
 INSERT INTO `reg_item` (`iid`,`itype`,`igroup`,`icode`,`iname`,`iuoh`,`ireoq`,`idesc`,`iqonhand`,`icost`,`idep`,`idate`,`st`) VALUES 
- (1,'type','group','code','name','unit','reorder qty','desc','on hand','cost','dep','2018-05-06','A'),
- (2,'work in progress','Anti Cutter','eeeeee','eeeeeeee','Kg','eeeeeeee','eeeeeeeeee','eeeeeeee','e','work in progress','2018-05-03','A'),
- (3,'work in progress','Anti Cutter','eeeeee','eeeeeeee','Kg','eeeeeeee','eeeeeeeeee','eeeeeeee','e','tttttttt','2018-05-03','A');
+ (1,'type','group','code','name','unit','reorder qty','desc','on hand','100','dep','2018-05-06','A'),
+ (2,'work in progress','Anti Cutter','eeeeee','eeeeeeee','Kg','eeeeeeee','eeeeeeeeee','eeeeeeee','100','work in progress','2018-05-03','A'),
+ (3,'work in progress','Anti Cutter','eeeeee','eeeeeeee','Kg','eeeeeeee','eeeeeeeeee','eeeeeeee','100','tttttttt','2018-05-03','A');
 /*!40000 ALTER TABLE `reg_item` ENABLE KEYS */;
 
 
@@ -300,7 +355,7 @@ CREATE TABLE `reg_tool` (
   `contactno` varchar(20) DEFAULT NULL,
   `st` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`tid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bhaghya`.`reg_tool`
@@ -309,7 +364,8 @@ CREATE TABLE `reg_tool` (
 /*!40000 ALTER TABLE `reg_tool` DISABLE KEYS */;
 INSERT INTO `reg_tool` (`tid`,`name`,`address`,`store_incharge`,`tlno`,`dob`,`tool_type`,`contactno`,`st`) VALUES 
  (1,'multy meter','fffd','fdf','dfd','2018-05-06 00:00:00','455','55','A'),
- (2,'multy plug','fffd','fdf','dfd','2018-05-06 13:01:47','Whole-Sale','55','D');
+ (2,'multy plug','fffd','fdf','dfd','2018-05-06 13:01:47','Whole-Sale','55','D'),
+ (3,'multy meter','fffd','fdf','dfd','2018-05-06 00:00:00','Whole-Sale','55','A');
 /*!40000 ALTER TABLE `reg_tool` ENABLE KEYS */;
 
 
