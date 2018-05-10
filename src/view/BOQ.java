@@ -94,7 +94,7 @@ public class BOQ extends javax.swing.JFrame {
         Clocklbl1 = new javax.swing.JLabel();
         txtgrandTotal = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(3, 38, 91));
 
