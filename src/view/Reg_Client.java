@@ -198,7 +198,7 @@ public class Reg_Client extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(3, 38, 91));
 
@@ -756,19 +756,12 @@ public class Reg_Client extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Clocklbl;
-    private javax.swing.JButton btnCli;
     private javax.swing.JButton btnCli1;
-    private javax.swing.JButton btnEmp;
     private javax.swing.JButton btnEmp1;
-    private javax.swing.JButton btnIte;
     private javax.swing.JButton btnIte1;
-    private javax.swing.JButton btnSto;
     private javax.swing.JButton btnSto1;
-    private javax.swing.JButton btnSup;
     private javax.swing.JButton btnSup1;
-    private javax.swing.JButton btnToo;
     private javax.swing.JButton btnToo1;
-    private javax.swing.JButton btnVeh;
     private javax.swing.JButton btnVeh1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JList cli_list;
@@ -801,7 +794,6 @@ public class Reg_Client extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

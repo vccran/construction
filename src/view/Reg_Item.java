@@ -84,7 +84,7 @@ public class Reg_Item extends javax.swing.JFrame {
         jDateChooser9 = new com.toedter.calendar.JDateChooser();
         jLabel19 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(3, 38, 91));
 

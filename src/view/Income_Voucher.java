@@ -35,7 +35,7 @@ public class Income_Voucher extends javax.swing.JFrame {
     private void GetVouchers() {
         try {
             dataModel = new DefaultListModel();
-            ResultSet rs = _dbConnection.query("SELECT * FROM `accounts` WHERE st ='A' and vou_typ='"+vou_type+"'");
+            ResultSet rs = _dbConnection.query("SELECT * FROM `accounts` WHERE st ='A' and vou_type='"+vou_type+"'");
             while (rs.next()) {
                 dataModel.addElement(rs.getString("aid") + "--" + rs.getString("vou_no")+"_"+ rs.getDouble("amount"));
             }
@@ -167,7 +167,7 @@ public class Income_Voucher extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(3, 38, 91));
 

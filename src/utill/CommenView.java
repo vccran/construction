@@ -36,17 +36,26 @@ public class CommenView extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblinfo = new javax.swing.JTable();
         btnShow = new javax.swing.JButton();
         combo = new javax.swing.JComboBox<>();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jPanel3 = new javax.swing.JPanel();
+        Clocklbl = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
 
         tblinfo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,8 +72,8 @@ public class CommenView extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblinfo);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(372, 10, 870, 660);
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(370, 10, 870, 530);
 
         btnShow.setText("Show");
         btnShow.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +81,7 @@ public class CommenView extends javax.swing.JFrame {
                 btnShowActionPerformed(evt);
             }
         });
-        getContentPane().add(btnShow);
+        jPanel1.add(btnShow);
         btnShow.setBounds(10, 10, 330, 30);
 
         combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Get Project Info", "Employees On Project", "test 2", "test 3", "test 4" }));
@@ -86,8 +95,19 @@ public class CommenView extends javax.swing.JFrame {
                 comboActionPerformed(evt);
             }
         });
-        getContentPane().add(combo);
+        jPanel1.add(combo);
         combo.setBounds(10, 50, 310, 30);
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setText("Ongoing Projects");
+        jRadioButton2.setActionCommand("and st='A'");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jRadioButton2);
+        jRadioButton2.setBounds(10, 120, 190, 23);
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setSelected(true);
@@ -98,19 +118,8 @@ public class CommenView extends javax.swing.JFrame {
                 jRadioButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton1);
+        jPanel1.add(jRadioButton1);
         jRadioButton1.setBounds(10, 100, 190, 23);
-
-        buttonGroup1.add(jRadioButton4);
-        jRadioButton4.setText("Deleted Projects");
-        jRadioButton4.setActionCommand("and st='D'");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jRadioButton4);
-        jRadioButton4.setBounds(10, 160, 190, 23);
 
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("Done Projects");
@@ -120,21 +129,77 @@ public class CommenView extends javax.swing.JFrame {
                 jRadioButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton3);
+        jPanel1.add(jRadioButton3);
         jRadioButton3.setBounds(10, 140, 190, 23);
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Ongoing Projects");
-        jRadioButton2.setActionCommand("and st='A'");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(jRadioButton4);
+        jRadioButton4.setText("Deleted Projects");
+        jRadioButton4.setActionCommand("and st='D'");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                jRadioButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton2);
-        jRadioButton2.setBounds(10, 120, 190, 23);
+        jPanel1.add(jRadioButton4);
+        jRadioButton4.setBounds(10, 160, 190, 23);
 
-        setSize(new java.awt.Dimension(1269, 719));
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 130, 1250, 558);
+
+        jPanel3.setBackground(new java.awt.Color(3, 38, 91));
+
+        Clocklbl.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
+        Clocklbl.setForeground(new java.awt.Color(255, 255, 255));
+        Clocklbl.setText("jLabel2");
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pic/Untitl1.png"))); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel1.setText("      Bhaghya Constructions(PVT)Ltd.");
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pic/Setting.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 405, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Clocklbl, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(Clocklbl)
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanel3);
+        jPanel3.setBounds(0, 0, 1250, 130);
+
+        setSize(new java.awt.Dimension(1269, 727));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -217,9 +282,15 @@ public class CommenView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Clocklbl;
     private javax.swing.JButton btnShow;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> combo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;

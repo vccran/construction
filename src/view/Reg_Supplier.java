@@ -101,9 +101,6 @@ public class Reg_Supplier extends javax.swing.JFrame {
         jButton26 = new javax.swing.JButton();
         jTextField11 = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
 
         jPanel2.setBackground(new java.awt.Color(3, 38, 91));
 
@@ -166,7 +163,7 @@ public class Reg_Supplier extends javax.swing.JFrame {
 
         jMenu6.setText("jMenu6");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(3, 38, 91));
 
@@ -583,14 +580,6 @@ public class Reg_Supplier extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jMenu2.setText("File");
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Edit");
-        jMenuBar1.add(jMenu3);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -864,12 +853,9 @@ public class Reg_Supplier extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
