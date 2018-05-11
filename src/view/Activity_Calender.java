@@ -37,6 +37,20 @@ public class Activity_Calender extends javax.swing.JFrame {
                     break;
                 }
             }
+            this.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                    try {
+                        for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                            if ("Windows".equals(info.getName())) {
+                                UIManager.setLookAndFeel(info.getClassName());
+                                break;
+                            }
+                        }
+                    } catch (Exception e) {
+                    }
+                }
+            });
         } catch (Exception e) {
         }
         dateformat = new SimpleDateFormat("yyyy-MM-dd");
