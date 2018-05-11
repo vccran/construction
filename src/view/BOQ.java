@@ -426,7 +426,6 @@ public class BOQ extends javax.swing.JFrame {
                     + " ON DUPLICATE KEY UPDATE st='A'";
 
             int tmp = _dbConnection.insertAI(sql);
-            txtboqid.setText(String.valueOf(tmp));
             System.out.println("Key : " + tmp);
             GetModel();
             loadTable(txtboqid.getText(), txtname.getText());
