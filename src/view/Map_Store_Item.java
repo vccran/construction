@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import utill.Public;
 
 /**
  *
@@ -27,7 +28,7 @@ public class Map_Store_Item extends javax.swing.JFrame {
     public Map_Store_Item() {
         _dbConnection = MysqlConnect.getDbCon();
         dateformat = new SimpleDateFormat("yyyy-MM-dd");
-        GetMappings();
+        GetModel();
         initComponents();
         GetStore();
         GetItem();
@@ -49,7 +50,7 @@ public class Map_Store_Item extends javax.swing.JFrame {
     private void GetItem() {
         try {
             ResultSet rs = _dbConnection.query("SELECT * FROM reg_item  WHERE st='A' and iid not in "
-                    + "(select iid from map_store_item where sid='" + cmbStore.getSelectedItem().toString() + "' and st <> 'D')");
+                    + "(select iid from map_store_item where sid='" + cmbStore.getSelectedItem().toString().split("--")[0] + "' and st <> 'D')");
             cmbItem.removeAllItems();
             while (rs.next()) {
                 cmbItem.addItem(rs.getString("iid") + "--" + rs.getString("iname"));
@@ -62,18 +63,18 @@ public class Map_Store_Item extends javax.swing.JFrame {
 
     }
 
-    private void GetMappings() {
+    private void GetModel() {
         try {
             dataModel = new DefaultListModel();
             ResultSet rs = _dbConnection.query("SELECT a.`msiid`,b.`stores_id`,b.`name`AS projectname,c.`iid`,c.`iname`AS employeename FROM \n"
                     + "map_store_item a\n"
                     + "INNER JOIN `reg_stores` b ON a.`sid`=b.`stores_id` AND b.`st` != 'D'\n"
                     + "INNER JOIN `reg_item` c ON a.`iid`=c.`iid` AND c.`st` != 'D'\n"
-                    + "WHERE a.`st` ='A'");
+                    + "WHERE a.`st` ='A' group by b.stores_id");
             while (rs.next()) {
                 dataModel.addElement(rs.getString("msiid") + "--"
-                        + rs.getString("stores_id") + "-" + rs.getString("projectname")
-                        + rs.getString("iid") + "-" + rs.getString("employeename"));
+                        + rs.getString("stores_id") + "-" + rs.getString("projectname"));
+//                        + rs.getString("iid") + "-" + rs.getString("employeename"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
@@ -312,8 +313,13 @@ public class Map_Store_Item extends javax.swing.JFrame {
 //            String sql = "UPDATE mapproj_employee SET st = 'D' WHERE peid =" + part1 + "";
             //            MysqlConnect.db.query(sql);
             int tmp = _dbConnection.insert(sql);
-            new Map_Store_Item().show();
-            this.dispose();
+//            new Map_Store_Item().show();
+//            this.dispose();
+            GetModel();
+            jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{}, new String[]{}
+            ));
+            GetItem();
         } catch (SQLException ex) {
             Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -324,18 +330,30 @@ public class Map_Store_Item extends javax.swing.JFrame {
         try {
             String[] parts = cli_list.getSelectedValue().toString().split("--");
             String part1 = parts[0]; // 004
+            String part2 = parts[1].split("-")[0]; // 004
 
-            //            JOptionPane.showMessageDialog(this, part1);
-            ResultSet rs = MysqlConnect.getDbCon().query("SELECT a.`msiid`,b.`stores_id`,b.`name`AS projectname,c.`iid`,c.`iname`AS employeename FROM \n"
+            String sql = "SELECT a.`msiid`,b.`stores_id`,b.`name`AS projectname,c.`iid`,c.`iname`AS employeename FROM \n"
                     + "map_store_item a\n"
                     + "INNER JOIN `reg_stores` b ON a.`sid`=b.`stores_id` AND b.`st` != 'D'\n"
                     + "INNER JOIN `reg_item` c ON a.`iid`=c.`iid` AND c.`st` != 'D'\n"
-//                    + "WHERE a.`st` ='A'"
-                    + " WHERE a.msiid='" + part1 + "' and a.`st` ='A'");
+                    + " WHERE a.msiid='" + part1 + "' and a.`st` ='A'";
+            ResultSet rs = MysqlConnect.getDbCon().query(sql);
             if (rs.next()) {
                 cmbStore.setSelectedItem(rs.getString("stores_id") + "--" + rs.getString("projectname"));
                 cmbItem.setSelectedItem(rs.getString("iid") + "--" + rs.getString("employeename"));
             }
+
+            sql = "select * from ("
+                    + "SELECT b.`name`AS StoreName,c.`iname` ItemName,c.`idesc` ItemDescription,c.`icost` UnitPrice, a.qty Quantity"
+                    + " FROM \n"
+                    + "map_store_item a\n"
+                    + "INNER JOIN `reg_stores` b ON a.`sid`=b.`stores_id` AND b.`st` != 'D'\n"
+                    + "INNER JOIN `reg_item` c ON a.`iid`=c.`iid` AND c.`st` != 'D'\n"
+                    + " WHERE a.sid='" + part2 + "' and a.`st` ='A') xx";
+
+            System.out.println(part2);
+            Public.FillTable(jTable1, sql, MysqlConnect.getDbCon());
+            GetItem();
         } catch (SQLException ex) {
             Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -369,8 +387,13 @@ public class Map_Store_Item extends javax.swing.JFrame {
             int tmp = _dbConnection.insert(sql);
 
             System.out.println("Key : " + tmp);
-            new Map_Store_Item().show();
-            this.dispose();
+//            new Map_Store_Item().show();
+//            this.dispose();
+            GetModel();
+            jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                    new Object[][]{}, new String[]{}
+            ));
+            GetItem();
         } catch (SQLException ex) {
             Logger.getLogger(Reg_Supplier.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {

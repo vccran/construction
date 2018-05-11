@@ -501,7 +501,6 @@ public class Reg_Item extends javax.swing.JFrame {
             String sql = "INSERT INTO `reg_item` ("
                     + "`iid`," //1
                     + "`itype`,"//2
-                    + "`igroup`,"//3
                     + "`icode`,"//4
                     + "`iname`,"//5
                     + "`iuoh`,"//6
