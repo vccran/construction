@@ -5,10 +5,16 @@
  */
 package view;
 
+import database.MysqlConnect;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
 import utill.HighlightEvaluator;
 
 /**
@@ -21,8 +27,19 @@ public class Activity_Calender extends javax.swing.JFrame {
      * Creates new form Activity_Calender
      */
     HighlightEvaluator evaluator = new HighlightEvaluator();
+    private final SimpleDateFormat dateformat;
 
     public Activity_Calender() {
+        try {
+            for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+        }
+        dateformat = new SimpleDateFormat("yyyy-MM-dd");
         initComponents();
         loadfirst();
     }
@@ -108,8 +125,18 @@ public class Activity_Calender extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("ACTIVITY CALENDER");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -176,6 +203,18 @@ public class Activity_Calender extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jCalendar1MouseClicked
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Activities act = new Activities();
+        act.show();
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Activity_Calender act = new Activity_Calender();
+        act.show();
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -212,15 +251,20 @@ public class Activity_Calender extends javax.swing.JFrame {
     }
 
     private void loadfirst() {
-        evaluator.add(createDate(14));
-        evaluator.add(createDate(15));
+        loadDates();
         jCalendar1.getDayChooser().addDateEvaluator(evaluator);
         jCalendar1.setCalendar(jCalendar1.getCalendar());
         try {
             jCalendar1.addPropertyChangeListener(new PropertyChangeListener() {
                 @Override
                 public void propertyChange(PropertyChangeEvent evt) {
-                    System.out.println(jCalendar1.getDate());
+                    try {
+                        ResultSet resultSet = MysqlConnect.getDbCon().query("SELECT * FROM reg_activity WHERE date='" + dateformat.format(jCalendar1.getDate()) + "'");
+                        if (resultSet.next()) {
+                            JOptionPane.showMessageDialog(rootPane, resultSet.getString("comment"), "Your activity is", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                    } catch (Exception e) {
+                    }
                 }
             });
         } catch (Exception e) {
@@ -248,4 +292,15 @@ public class Activity_Calender extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
+
+    private void loadDates() {
+        try {
+            ResultSet resultSet = MysqlConnect.getDbCon().query("SELECT * FROM reg_activity WHERE st='A'");
+            evaluator = new HighlightEvaluator();
+            while (resultSet.next()) {
+                evaluator.add(resultSet.getDate("date"));
+            }
+        } catch (Exception e) {
+        }
+    }
 }
