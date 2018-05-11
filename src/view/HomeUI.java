@@ -112,6 +112,11 @@ public class HomeUI extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pic/retentionschedule.png"))); // NOI18N
         jButton8.setText("Activities");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setBackground(new java.awt.Color(158, 1, 11));
         jButton9.setFont(new java.awt.Font("Arial Narrow", 1, 18)); // NOI18N
@@ -291,6 +296,11 @@ public class HomeUI extends javax.swing.JFrame {
         Map_Store_Item map = new Map_Store_Item();
         map.show();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        Activity_Calender reg = new Activity_Calender();
+        reg.show();
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments

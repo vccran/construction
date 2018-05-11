@@ -5,6 +5,12 @@
  */
 package view;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.Calendar;
+import java.util.Date;
+import utill.HighlightEvaluator;
+
 /**
  *
  * @author Sachintha
@@ -14,8 +20,11 @@ public class Activity_Calender extends javax.swing.JFrame {
     /**
      * Creates new form Activity_Calender
      */
+    HighlightEvaluator evaluator = new HighlightEvaluator();
+
     public Activity_Calender() {
         initComponents();
+        loadfirst();
     }
 
     /**
@@ -37,7 +46,7 @@ public class Activity_Calender extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jCalendar1 = new com.toedter.calendar.JCalendar();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(3, 38, 91));
 
@@ -123,6 +132,12 @@ public class Activity_Calender extends javax.swing.JFrame {
                 .addContainerGap(322, Short.MAX_VALUE))
         );
 
+        jCalendar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCalendar1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -157,6 +172,10 @@ public class Activity_Calender extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2MouseClicked
 
+    private void jCalendar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCalendar1MouseClicked
+
+    }//GEN-LAST:event_jCalendar1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -190,6 +209,32 @@ public class Activity_Calender extends javax.swing.JFrame {
                 new Activity_Calender().setVisible(true);
             }
         });
+    }
+
+    private void loadfirst() {
+        evaluator.add(createDate(14));
+        evaluator.add(createDate(15));
+        jCalendar1.getDayChooser().addDateEvaluator(evaluator);
+        jCalendar1.setCalendar(jCalendar1.getCalendar());
+        try {
+            jCalendar1.addPropertyChangeListener(new PropertyChangeListener() {
+                @Override
+                public void propertyChange(PropertyChangeEvent evt) {
+                    System.out.println(jCalendar1.getDate());
+                }
+            });
+        } catch (Exception e) {
+        }
+    }
+
+    private Date createDate(int d) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.DAY_OF_MONTH, d);
+        c.set(Calendar.HOUR_OF_DAY, 0);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND, 0);
+        return (c.getTime());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

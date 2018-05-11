@@ -53,6 +53,10 @@ public class BOQ extends javax.swing.JFrame {
             while (rs.next()) {
                 dataModel.addElement(rs.getString("a.bid") + "--" + rs.getString("a.name"));
             }
+            if (cli_list != null) {
+                cli_list.removeAll();
+                cli_list.setModel(dataModel);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -351,27 +355,10 @@ public class BOQ extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cli_listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cli_listMouseClicked
-
-        try {
-            String[] parts = cli_list.getSelectedValue().toString().split("--");
-            String part1 = parts[0]; // 004
-            String part2 = parts[1]; // 034556
-
-            String sql = "select * from (SELECT c.`iid` ItemID,c.`iname` ItemName,c.`idesc` ItemDescription,c.`icost` UnitPrice,b.`qty` Quantity,"
-                    + "(c.`icost`*b.`qty`) AS Total \n"
-                    + " FROM reg_boq a INNER JOIN map_boq_item b ON a.bid=b.bid AND a.`st`=b.`st`\n"
-                    + "LEFT OUTER JOIN `reg_item` c ON b.`iid`=c.`iid` AND c.`st`=b.`st`\n"
-                    + "WHERE a.st ='A' and b.bid='" + part1 + "') x";
-            System.out.println(sql);
-            Public.FillTable(jTable1, sql, MysqlConnect.getDbCon());
-
-            txtboqid.setText(part1);
-            txtname.setText(part2);
-            Start2();
-
-        } catch (Exception ex) {
-            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        String[] parts = cli_list.getSelectedValue().toString().split("--");
+        String part1 = parts[0]; // 004
+        String part2 = parts[1]; // 034556
+        loadTable(part1, part2);
     }//GEN-LAST:event_cli_listMouseClicked
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
@@ -401,7 +388,10 @@ public class BOQ extends javax.swing.JFrame {
 
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
         try {
-
+            if (txtname.getText().equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Please enter name");
+                return;
+            }
             if (txtboqid.getText().trim().isEmpty()) {
                 txtboqid.setText("0");
             }
@@ -414,9 +404,9 @@ public class BOQ extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(rootPane, e.getLocalizedMessage());
-        } finally {
-            Start2();
         }
+        Start2();
+
     }//GEN-LAST:event_btnStartActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
@@ -439,9 +429,7 @@ public class BOQ extends javax.swing.JFrame {
             txtboqid.setText(String.valueOf(tmp));
             System.out.println("Key : " + tmp);
             GetModel();
-            jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                    new Object[][]{}, new String[]{}
-            ));
+            loadTable(txtboqid.getText(), txtname.getText());
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(rootPane, e.getLocalizedMessage());
@@ -538,6 +526,9 @@ public class BOQ extends javax.swing.JFrame {
         txtname.setEnabled(true);
         txtboqid.setEnabled(false);
         btnStart.setEnabled(true);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{}, new String[]{}
+        ));
     }
 
     private void Start2() {
@@ -560,6 +551,26 @@ public class BOQ extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
             txtgrandTotal.setText("0");
+        }
+    }
+
+    private void loadTable(String part1, String part2) {
+        try {
+
+            String sql = "select * from (SELECT c.`iid` ItemID,c.`iname` ItemName,c.`idesc` ItemDescription,c.`icost` UnitPrice,b.`qty` Quantity,"
+                    + "(c.`icost`*b.`qty`) AS Total \n"
+                    + " FROM reg_boq a INNER JOIN map_boq_item b ON a.bid=b.bid AND a.`st`=b.`st`\n"
+                    + "LEFT OUTER JOIN `reg_item` c ON b.`iid`=c.`iid` AND c.`st`=b.`st`\n"
+                    + "WHERE a.st ='A' and b.bid='" + part1 + "') x";
+            System.out.println(sql);
+            Public.FillTable(jTable1, sql, MysqlConnect.getDbCon());
+
+            txtboqid.setText(part1);
+            txtname.setText(part2);
+            Start2();
+
+        } catch (Exception ex) {
+            Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
