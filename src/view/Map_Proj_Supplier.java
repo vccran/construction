@@ -64,7 +64,12 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        btnClient = new javax.swing.JButton();
+        btnEmployee = new javax.swing.JButton();
+        btnSupplier = new javax.swing.JButton();
+        btnTools = new javax.swing.JButton();
+        btnVehical = new javax.swing.JButton();
+        btnItem = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         Clocklbl = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -84,10 +89,75 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(3, 38, 91));
 
-        jButton2.setText("Project-Supplier");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnClient.setText("Project-Client");
+        btnClient.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                btnClientMouseClicked(evt);
+            }
+        });
+        btnClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientActionPerformed(evt);
+            }
+        });
+
+        btnEmployee.setText("Project-Employee");
+        btnEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnEmployeeMouseClicked(evt);
+            }
+        });
+        btnEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmployeeActionPerformed(evt);
+            }
+        });
+
+        btnSupplier.setText("Project-Supplier");
+        btnSupplier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSupplierMouseClicked(evt);
+            }
+        });
+        btnSupplier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSupplierActionPerformed(evt);
+            }
+        });
+
+        btnTools.setText("Project-Tools");
+        btnTools.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnToolsMouseClicked(evt);
+            }
+        });
+        btnTools.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnToolsActionPerformed(evt);
+            }
+        });
+
+        btnVehical.setText("Project-Vehicle");
+        btnVehical.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnVehicalMouseClicked(evt);
+            }
+        });
+        btnVehical.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVehicalActionPerformed(evt);
+            }
+        });
+
+        btnItem.setText("Store-Item");
+        btnItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnItemMouseClicked(evt);
+            }
+        });
+        btnItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnItemActionPerformed(evt);
             }
         });
 
@@ -96,16 +166,32 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnItem, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVehical, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTools, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClient, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(407, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(btnClient, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnTools, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVehical, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnItem, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(196, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(3, 38, 91));
@@ -245,11 +331,6 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseClicked
-
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         try {
             if (jTable1.getSelectedRow() < 0) {
@@ -320,6 +401,61 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
         loadTable(cmbProject.getSelectedItem().toString().split("--")[0]);
     }//GEN-LAST:event_cmbProjectActionPerformed
 
+    private void btnClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClientMouseClicked
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnClientMouseClicked
+
+    private void btnClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientActionPerformed
+        new Map_Proj_Client().show();
+        this.dispose();
+    }//GEN-LAST:event_btnClientActionPerformed
+
+    private void btnEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmployeeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEmployeeMouseClicked
+
+    private void btnEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmployeeActionPerformed
+        new Map_Proj_Employee().show();
+        this.dispose();
+    }//GEN-LAST:event_btnEmployeeActionPerformed
+
+    private void btnSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSupplierMouseClicked
+
+    private void btnSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplierActionPerformed
+        new Map_Proj_Supplier().show();
+        this.dispose();
+    }//GEN-LAST:event_btnSupplierActionPerformed
+
+    private void btnToolsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnToolsMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnToolsMouseClicked
+
+    private void btnToolsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToolsActionPerformed
+        new Map_Proj_Tools().show();
+        this.dispose();
+    }//GEN-LAST:event_btnToolsActionPerformed
+
+    private void btnVehicalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVehicalMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVehicalMouseClicked
+
+    private void btnVehicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehicalActionPerformed
+        new Map_Proj_Vehicle().show();
+        this.dispose();
+    }//GEN-LAST:event_btnVehicalActionPerformed
+
+    private void btnItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnItemMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnItemMouseClicked
+
+    private void btnItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnItemActionPerformed
+        new Map_Store_Item().show();
+        this.dispose();
+    }//GEN-LAST:event_btnItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -373,10 +509,15 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Clocklbl;
     private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnClient;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEmployee;
+    private javax.swing.JButton btnItem;
+    private javax.swing.JButton btnSupplier;
+    private javax.swing.JButton btnTools;
+    private javax.swing.JButton btnVehical;
     private javax.swing.JComboBox cmbProject;
     private javax.swing.JComboBox cmbSupplier;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
