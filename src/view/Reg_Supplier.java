@@ -319,14 +319,6 @@ public class Reg_Supplier extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel14.setText("Supplier Registration");
 
-        jTextField1.setText("EMP-ID");
-
-        jTextField22.setText("Name");
-
-        jTextField44.setText("Address");
-
-        jTextField55.setText("Email");
-
         jTextField9.setText("+94-XXXXXXXXXX");
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -395,8 +387,6 @@ public class Reg_Supplier extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel5.setText("NIC No");
-
-        jTextField33.setText("NIC No");
 
         cli_list.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

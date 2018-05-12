@@ -255,14 +255,6 @@ public class Reg_Tools extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel14.setText("Tools Registration");
 
-        jTextField1.setText("EMP-ID");
-
-        jTextField2.setText("Name");
-
-        jTextField3.setText("Address");
-
-        jTextField4.setText("Email");
-
         jTextField8.setText("+94-XXXXXXXXXX");
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -302,8 +294,6 @@ public class Reg_Tools extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        jTextField5.setText("Email");
 
         cli_list.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

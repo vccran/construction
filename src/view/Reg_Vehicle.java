@@ -238,14 +238,6 @@ public class Reg_Vehicle extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel14.setText("Vehicle Registration");
 
-        jTextField1.setText("EMP-ID");
-
-        jTextField2.setText("Name");
-
-        jTextField4.setText("Address");
-
-        jTextField5.setText("Email");
-
         jTextField9.setText("+94-XXXXXXXXXX");
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -288,10 +280,6 @@ public class Reg_Vehicle extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel5.setText("License No");
-
-        jTextField3.setText("NIC No");
-
-        jTextField6.setText("Email");
 
         vehiclei_list.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

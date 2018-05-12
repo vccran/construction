@@ -263,18 +263,11 @@ public class Reg_Client extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel14.setText("Client Registration");
 
-        txtempid.setText("CLI-ID");
         txtempid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtempidActionPerformed(evt);
             }
         });
-
-        txtname.setText("Name");
-
-        txtaddress.setText("Address");
-
-        txtemail.setText("Email");
 
         txtconnumber.setText("+94-XXXXXXXXXX");
         txtconnumber.addActionListener(new java.awt.event.ActionListener() {

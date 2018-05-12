@@ -50,7 +50,13 @@ public class Reg_Item extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        btnEmp1 = new javax.swing.JButton();
+        btnSto1 = new javax.swing.JButton();
+        btnSup1 = new javax.swing.JButton();
+        btnCli1 = new javax.swing.JButton();
+        btnVeh1 = new javax.swing.JButton();
+        btnToo1 = new javax.swing.JButton();
+        btnIte1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -138,10 +144,57 @@ public class Reg_Item extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(3, 38, 91));
 
-        jButton2.setText("ADD ITEMS");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnEmp1.setText("Employee Registration");
+        btnEmp1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                btnEmp1MouseClicked(evt);
+            }
+        });
+        btnEmp1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmp1ActionPerformed(evt);
+            }
+        });
+
+        btnSto1.setText("Stores Registration");
+        btnSto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSto1ActionPerformed(evt);
+            }
+        });
+
+        btnSup1.setText("Supplier Registration");
+        btnSup1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSup1ActionPerformed(evt);
+            }
+        });
+
+        btnCli1.setText("Client Registration");
+        btnCli1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCli1ActionPerformed(evt);
+            }
+        });
+
+        btnVeh1.setText("Vehicle Registration");
+        btnVeh1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVeh1ActionPerformed(evt);
+            }
+        });
+
+        btnToo1.setText("Tools Registration");
+        btnToo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnToo1ActionPerformed(evt);
+            }
+        });
+
+        btnIte1.setText("Item Registration");
+        btnIte1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIte1ActionPerformed(evt);
             }
         });
 
@@ -151,15 +204,33 @@ public class Reg_Item extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnIte1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEmp1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSto1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSup1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCli1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVeh1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnToo1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(348, Short.MAX_VALUE))
+                .addComponent(btnEmp1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSto1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSup1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCli1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVeh1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnToo1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnIte1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
@@ -183,13 +254,6 @@ public class Reg_Item extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel11.setText("Cost");
 
-        txtROQ.setText("jTextField2");
-
-        txtItemName.setText("jTextField2");
-
-        txtItemDesc.setText("jTextField2");
-
-        txtcost.setText("jTextField2");
         txtcost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcostActionPerformed(evt);
@@ -212,22 +276,16 @@ public class Reg_Item extends javax.swing.JFrame {
 
         cmbItemType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "row", "work in progress", "service", "printer" }));
 
-        txtItemID.setText("jTextField2");
-
         jLabel15.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel15.setText("Item Name");
 
         cmbUOH.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Kg", "Meter", "Nos" }));
-
-        txtQOH.setText("jTextField2");
 
         jLabel16.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel16.setText("store");
 
         jLabel18.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel18.setText("Item Type");
-
-        txtItemCode.setText("jTextField2");
 
         cli_list.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -278,7 +336,7 @@ public class Reg_Item extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
-                                .addGap(10, 10, 10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtItemDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -297,7 +355,7 @@ public class Reg_Item extends javax.swing.JFrame {
                                 .addGap(66, 66, 66)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtcost)
-                                    .addComponent(jDateChooser9, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)))))
+                                    .addComponent(jDateChooser9, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -323,7 +381,7 @@ public class Reg_Item extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(31, 31, 31)
                 .addComponent(jButton4)
-                .addGap(55, 643, Short.MAX_VALUE))
+                .addGap(55, 648, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -338,7 +396,7 @@ public class Reg_Item extends javax.swing.JFrame {
                         .addComponent(txtItemID, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(70, 70, 70)
                 .addComponent(jLabel17)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 192, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 197, Short.MAX_VALUE)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
@@ -379,7 +437,7 @@ public class Reg_Item extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel9)
                                     .addComponent(txtItemDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -433,11 +491,6 @@ public class Reg_Item extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseClicked
 
     private void txtcostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcostActionPerformed
         // TODO add your handling code here:
@@ -538,6 +591,46 @@ public class Reg_Item extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void btnEmp1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEmp1MouseClicked
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEmp1MouseClicked
+
+    private void btnEmp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmp1ActionPerformed
+        new Reg_Employee().show();
+        this.dispose();
+    }//GEN-LAST:event_btnEmp1ActionPerformed
+
+    private void btnSto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSto1ActionPerformed
+        new Reg_Stores().show();
+        this.dispose();
+    }//GEN-LAST:event_btnSto1ActionPerformed
+
+    private void btnSup1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSup1ActionPerformed
+        new Reg_Supplier().show();
+        this.dispose();
+    }//GEN-LAST:event_btnSup1ActionPerformed
+
+    private void btnCli1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCli1ActionPerformed
+        new Reg_Client().show();
+        this.dispose();
+    }//GEN-LAST:event_btnCli1ActionPerformed
+
+    private void btnVeh1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVeh1ActionPerformed
+        new Reg_Vehicle().show();
+        this.dispose();
+    }//GEN-LAST:event_btnVeh1ActionPerformed
+
+    private void btnToo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToo1ActionPerformed
+        new Reg_Tools().show();
+        this.dispose();
+    }//GEN-LAST:event_btnToo1ActionPerformed
+
+    private void btnIte1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIte1ActionPerformed
+        new Reg_Item().show();
+        this.dispose();
+    }//GEN-LAST:event_btnIte1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -576,12 +669,18 @@ public class Reg_Item extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Clocklbl;
+    private javax.swing.JButton btnCli1;
+    private javax.swing.JButton btnEmp1;
+    private javax.swing.JButton btnIte1;
+    private javax.swing.JButton btnSto1;
+    private javax.swing.JButton btnSup1;
+    private javax.swing.JButton btnToo1;
+    private javax.swing.JButton btnVeh1;
     private javax.swing.JList cli_list;
     private javax.swing.JComboBox cmbItemType;
     private javax.swing.JComboBox cmbUOH;
     private javax.swing.JComboBox cmbstore;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton4;
     private com.toedter.calendar.JDateChooser jDateChooser9;

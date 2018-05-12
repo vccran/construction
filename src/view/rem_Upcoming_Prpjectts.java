@@ -9,12 +9,12 @@ package view;
  *
  * @author Sachintha
  */
-public class Upcoming_Prpjectts extends javax.swing.JFrame {
+public class rem_Upcoming_Prpjectts extends javax.swing.JFrame {
 
     /**
      * Creates new form Upcoming_Prpjectts
      */
-    public Upcoming_Prpjectts() {
+    public rem_Upcoming_Prpjectts() {
         initComponents();
     }
 
@@ -343,20 +343,21 @@ public class Upcoming_Prpjectts extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Upcoming_Prpjectts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(rem_Upcoming_Prpjectts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Upcoming_Prpjectts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(rem_Upcoming_Prpjectts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Upcoming_Prpjectts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(rem_Upcoming_Prpjectts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Upcoming_Prpjectts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(rem_Upcoming_Prpjectts.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Upcoming_Prpjectts().setVisible(true);
+                new rem_Upcoming_Prpjectts().setVisible(true);
             }
         });
     }

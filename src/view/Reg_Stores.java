@@ -234,12 +234,6 @@ public class Reg_Stores extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel14.setText("Stores Registration");
 
-        txtstoresid.setText("EMP-ID");
-
-        txtname.setText("Name");
-
-        txtaddress.setText("Address");
-
         txtconnumber.setText("+94-XXXXXXXXXX");
         txtconnumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -271,8 +265,6 @@ public class Reg_Stores extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         jLabel5.setText("Officer incharge");
-
-        txtofzin.setText("Name");
 
         store_list.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
