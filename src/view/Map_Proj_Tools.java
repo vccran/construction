@@ -18,18 +18,18 @@ import utill.Public;
  *
  * @author Sachintha
  */
-public class Map_Proj_Supplier extends javax.swing.JFrame {
+public class Map_Proj_Tools extends javax.swing.JFrame {
 
     private final MysqlConnect _dbConnection;
     private final SimpleDateFormat dateformat;
 
-    public Map_Proj_Supplier() {
+    public Map_Proj_Tools() {
         _dbConnection = MysqlConnect.getDbCon();
         dateformat = new SimpleDateFormat("yyyy-MM-dd");
 //        GetModel();
         initComponents();
         GetProject();
-        GetSupplier();
+        GetTools();
     }
 
     private void GetProject() {
@@ -45,13 +45,13 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
 
     }
 
-    private void GetSupplier() {
+    private void GetTools() {
         try {
-            ResultSet rs = _dbConnection.query("SELECT * FROM reg_sup  WHERE st='A' and supid not in "
-                    + "(select sid from map_proj_supplier where pid='" + cmbProject.getSelectedItem().toString().split("--")[0] + "' and st <> 'D')");
-            cmbSupplier.removeAllItems();
+            ResultSet rs = _dbConnection.query("SELECT * FROM reg_tool  WHERE st='A' and tid not in "
+                    + "(select tid from map_proj_tool where pid='" + cmbProject.getSelectedItem().toString().split("--")[0] + "' and st <> 'D')");
+            cmbTool.removeAllItems();
             while (rs.next()) {
-                cmbSupplier.addItem(rs.getString("supid") + "--" + rs.getString("name"));
+                cmbTool.addItem(rs.getString("tid") + "--" + rs.getString("name"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
@@ -75,7 +75,7 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         btnDelete = new javax.swing.JButton();
         cmbProject = new javax.swing.JComboBox();
-        cmbSupplier = new javax.swing.JComboBox();
+        cmbTool = new javax.swing.JComboBox();
         btnAdd = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -84,7 +84,7 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(3, 38, 91));
 
-        jButton2.setText("Project-Supplier");
+        jButton2.setText("Project-Tools");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
@@ -168,7 +168,7 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
         jLabel5.setBounds(20, 40, 80, 20);
 
         jLabel7.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
-        jLabel7.setText("Supplier");
+        jLabel7.setText("Tool");
         jPanel1.add(jLabel7);
         jLabel7.setBounds(20, 70, 80, 20);
 
@@ -191,8 +191,8 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
         jPanel1.add(cmbProject);
         cmbProject.setBounds(110, 40, 240, 20);
 
-        jPanel1.add(cmbSupplier);
-        cmbSupplier.setBounds(110, 70, 240, 20);
+        jPanel1.add(cmbTool);
+        cmbTool.setBounds(110, 70, 240, 20);
 
         btnAdd.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         btnAdd.setForeground(new java.awt.Color(204, 0, 0));
@@ -253,12 +253,12 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         try {
             if (jTable1.getSelectedRow() < 0) {
-                JOptionPane.showMessageDialog(rootPane, "Please select Supplier from grid");
+                JOptionPane.showMessageDialog(rootPane, "Please select Tools from grid");
                 return;
             }
             String part1 = jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString();
             System.out.println(part1);
-            String sql = "delete from map_proj_supplier WHERE mid =" + part1 + "";
+            String sql = "delete from map_proj_tool WHERE mid =" + part1 + "";
 //            String sql = "UPDATE mapproj_employee SET st = 'D' WHERE peid =" + part1 + "";
             //            MysqlConnect.db.query(sql);
             int tmp = _dbConnection.insert(sql);
@@ -276,21 +276,21 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
             if (!cmbProject.getSelectedItem().toString().contains("--")) {
                 throw new Exception("Empty ProjectID");
             }
-            if (!cmbSupplier.getSelectedItem().toString().contains("--")) {
+            if (!cmbTool.getSelectedItem().toString().contains("--")) {
                 throw new Exception("Empty SupplierID");
             }
 
-            String sql = "INSERT INTO `map_proj_supplier` ("
+            String sql = "INSERT INTO `map_proj_tool` ("
                     + "`mid`," //1
                     + "`pid`," //1
-                    + "`sid`,"//2
+                    + "`tid`,"//2
                     + "`st`"//3
                     + ") VALUES \n"
                     + " ('0','" + cmbProject.getSelectedItem().toString().split("--")[0] + "',"
-                    + "'" + cmbSupplier.getSelectedItem().toString().split("--")[0] + "',"
+                    + "'" + cmbTool.getSelectedItem().toString().split("--")[0] + "',"
                     + "'A')ON DUPLICATE KEY UPDATE "
                     + " pid='" + cmbProject.getSelectedItem().toString().split("--")[0] + "',"
-                    + " sid='" + cmbSupplier.getSelectedItem().toString().split("--")[0] + "',st='A'";
+                    + " tid='" + cmbTool.getSelectedItem().toString().split("--")[0] + "',st='A'";
             int tmp = _dbConnection.insert(sql);
 
             System.out.println("Key : " + tmp);
@@ -298,20 +298,20 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Reg_Supplier.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
-            Logger.getLogger(Map_Proj_Supplier.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Map_Proj_Tools.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void loadTable(String part1) {
         try {
             String sql = "select * from ("
-                    + "SELECT a.mid ID,a.`pid` ProjectID,b.`name`AS ProjectName,c.`name` SupplierName,c.`address` SupplierAddress,c.`email` Email,c.`sex` Sex, c.sup_type SupplierType\n"
-                    + "FROM map_proj_supplier a\n"
+                    + "SELECT a.mid ID,a.`pid` ProjectID,b.`name`AS ProjectName,c.`name` ToolName,c.`address` ToolAddress,c.`tlno` LicenceNo,c.`tool_type` ToolType\n"
+                    + "FROM `map_proj_tool` a\n"
                     + "INNER JOIN `reg_projects` b ON a.`pid`=b.`proid` AND b.`st` != 'D'\n"
-                    + "INNER JOIN `reg_sup` c ON a.`sid`=c.`supid` AND c.`st` != 'D'\n"
+                    + "INNER JOIN `reg_tool` c ON a.`tid`=c.`tid` AND c.`st` != 'D'"
                     + " WHERE a.pid='" + part1 + "' and a.`st` ='A') xx";
             Public.FillTable(jTable1, sql, MysqlConnect.getDbCon());
-            GetSupplier();
+            GetTools();
         } catch (Exception ex) {
             Logger.getLogger(Reg_Employee.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -337,14 +337,62 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Map_Proj_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Map_Proj_Tools.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Map_Proj_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Map_Proj_Tools.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Map_Proj_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Map_Proj_Tools.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Map_Proj_Supplier.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Map_Proj_Tools.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -365,7 +413,7 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Map_Proj_Supplier().setVisible(true);
+                new Map_Proj_Tools().setVisible(true);
             }
         });
     }
@@ -375,7 +423,7 @@ public class Map_Proj_Supplier extends javax.swing.JFrame {
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
     private javax.swing.JComboBox cmbProject;
-    private javax.swing.JComboBox cmbSupplier;
+    private javax.swing.JComboBox cmbTool;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
