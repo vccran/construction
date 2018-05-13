@@ -225,7 +225,7 @@ CREATE TABLE `map_proj_vehicle` (
   `vid` int(11) DEFAULT NULL,
   `st` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`mid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bhaghya`.`map_proj_vehicle`
