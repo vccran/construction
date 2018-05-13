@@ -8,6 +8,7 @@ package utill;
 import database.MysqlConnect;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -30,6 +31,7 @@ public class CommenView extends javax.swing.JFrame {
         controller = new General();
         param = new ArrayList();
         loadInitial();
+        loadComboBox("Project");
     }
 
     /**
@@ -56,7 +58,8 @@ public class CommenView extends javax.swing.JFrame {
         dateIncomeFrom = new com.toedter.calendar.JDateChooser();
         dateIncomeTo = new com.toedter.calendar.JDateChooser();
         pnlCombo = new javax.swing.JPanel();
-        commenCombo = new javax.swing.JComboBox<>();
+        cmbProject = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         Clocklbl = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -96,7 +99,7 @@ public class CommenView extends javax.swing.JFrame {
         jPanel1.add(btnShow);
         btnShow.setBounds(10, 60, 310, 30);
 
-        combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Get Project Info", "Employees On Project", "GetTotalIncome", "GetTotalProfit", "EmployeeSalary" }));
+        combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Get Project Info", "Employees On Project", "GetTotalIncome", "GetTotalProfit", "EmployeeSalary", "All Clients", "All Employees", "All Items", "All Stores", "All Suppliers", "All Tools", "All Vehicals" }));
         combo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 comboItemStateChanged(evt);
@@ -169,14 +172,41 @@ public class CommenView extends javax.swing.JFrame {
         jPanel1.add(pnlIncome);
         pnlIncome.setBounds(20, 400, 310, 0);
 
-        pnlCombo.setLayout(null);
+        cmbProject.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "a" }));
+        cmbProject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbProjectActionPerformed(evt);
+            }
+        });
 
-        commenCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        pnlCombo.add(commenCombo);
-        commenCombo.setBounds(10, 11, 290, 32);
+        jLabel2.setText("Select Project/Store");
+
+        javax.swing.GroupLayout pnlComboLayout = new javax.swing.GroupLayout(pnlCombo);
+        pnlCombo.setLayout(pnlComboLayout);
+        pnlComboLayout.setHorizontalGroup(
+            pnlComboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlComboLayout.createSequentialGroup()
+                .addGroup(pnlComboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlComboLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(cmbProject, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlComboLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        pnlComboLayout.setVerticalGroup(
+            pnlComboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlComboLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cmbProject, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
 
         jPanel1.add(pnlCombo);
-        pnlCombo.setBounds(10, 200, 310, 100);
+        pnlCombo.setBounds(10, 226, 310, 130);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 130, 1250, 558);
@@ -257,8 +287,15 @@ public class CommenView extends javax.swing.JFrame {
     }//GEN-LAST:event_comboItemStateChanged
 
     private void comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboActionPerformed
-
+        
         Show();
+        if (combo.getSelectedIndex() == 7) {
+            loadComboBox("Store");
+            jLabel2.setText("Select Store");
+        } else {
+            loadComboBox("Project");
+            jLabel2.setText("Select Project");
+        }
     }//GEN-LAST:event_comboActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
@@ -276,6 +313,10 @@ public class CommenView extends javax.swing.JFrame {
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         comboActionPerformed(evt);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void cmbProjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbProjectActionPerformed
+        Show();
+    }//GEN-LAST:event_cmbProjectActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,11 +358,12 @@ public class CommenView extends javax.swing.JFrame {
     private javax.swing.JLabel Clocklbl;
     private javax.swing.JButton btnShow;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox<String> cmbProject;
     private javax.swing.JComboBox<String> combo;
-    private javax.swing.JComboBox<String> commenCombo;
     private com.toedter.calendar.JDateChooser dateIncomeFrom;
     private com.toedter.calendar.JDateChooser dateIncomeTo;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
@@ -341,6 +383,7 @@ public class CommenView extends javax.swing.JFrame {
         param.clear();
         PanalHide(pnlGetProjectInfo);
         PanalHide(pnlIncome);
+        PanalHide(pnlCombo);
         switch (combo.getSelectedIndex()) {
             case 0:
                 PanalShow(pnlGetProjectInfo);
@@ -354,14 +397,62 @@ public class CommenView extends javax.swing.JFrame {
                 }
                 param.add(" and adate BETWEEN CAST('" + dateformat.format(dateIncomeFrom.getDate()) + "' AS DATE) AND CAST('" + dateformat.format(dateIncomeTo.getDate()) + "' AS DATE)");
                 break;
-//            case 5:
-//                PanalShow(pnlIncome);
-//                if (dateIncomeFrom.getDate() == null || dateIncomeTo.getDate() == null) {
-//                    JOptionPane.showMessageDialog(this, "Please select From To Date");
-//                    return;
-//                }
-//                param.add(" and adate BETWEEN CAST('" + dateformat.format(dateIncomeFrom.getDate()) + "' AS DATE) AND CAST('" + dateformat.format(dateIncomeTo.getDate()) + "' AS DATE)");
-//                break;
+            case 5:
+//                loadComboBox("Project");
+                PanalShow(pnlCombo);
+                if (!cmbProject.getSelectedItem().toString().equals("ALL")) {
+                    param.add("and clid in "
+                            + "(select cid from map_proj_client where pid='" + cmbProject.getSelectedItem().toString().split("--")[0] + "' and st <> 'D')");
+                }
+                break;
+            case 6:
+//                loadComboBox("Project");
+                PanalShow(pnlCombo);
+                if (!cmbProject.getSelectedItem().toString().equals("ALL")) {
+                    param.add("and empid in "
+                            + "(select employeeid from mapproj_employee where projectid='" + cmbProject.getSelectedItem().toString() + "' and st <> 'D')");
+                }
+                break;
+            case 7:
+//                loadComboBox("Store");
+                PanalShow(pnlCombo);
+                if (!cmbProject.getSelectedItem().toString().equals("ALL")) {
+                    param.add("and iid in "
+                            + "(select iid from map_store_item where sid='" + cmbProject.getSelectedItem().toString().split("--")[0] + "' and st <> 'D')");
+                }
+                break;
+            case 8:
+//                loadComboBox("Project");
+                PanalShow(pnlCombo);
+                if (!cmbProject.getSelectedItem().toString().equals("ALL")) {
+                    param.add("and stores_id in "
+                            + "(select storeid from reg_projects where proid='" + cmbProject.getSelectedItem().toString().split("--")[0] + "' and st <> 'D')");
+                }
+                break;
+            case 9:
+//                loadComboBox("Project");
+                PanalShow(pnlCombo);
+                if (!cmbProject.getSelectedItem().toString().equals("ALL")) {
+                    param.add("and supid in "
+                            + "(select sid from map_proj_supplier where pid='" + cmbProject.getSelectedItem().toString().split("--")[0] + "' and st <> 'D')");
+                }
+                break;
+            case 10:
+//                loadComboBox("Project");
+                PanalShow(pnlCombo);
+                if (!cmbProject.getSelectedItem().toString().equals("ALL")) {
+                    param.add("and tid in "
+                            + "(select tid from map_proj_tool where pid='" + cmbProject.getSelectedItem().toString().split("--")[0] + "' and st <> 'D')");
+                }
+                break;
+            case 11:
+//                loadComboBox("Project");
+                PanalShow(pnlCombo);
+                if (!cmbProject.getSelectedItem().toString().equals("ALL")) {
+                    param.add("and vid in "
+                            + "(select vid from map_proj_vehicle where pid='" + cmbProject.getSelectedItem().toString().split("--")[0] + "' and st <> 'D')");
+                }
+                break;
             default:
                 break;
         }
@@ -393,5 +484,20 @@ public class CommenView extends javax.swing.JFrame {
 
     private void loadInitial() {
         PanalHide(pnlGetProjectInfo);
+        PanalHide(pnlIncome);
+        PanalHide(pnlCombo);
+    }
+
+    private void loadComboBox(String combobo) {
+        try {
+            cmbProject.removeAllItems();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (combobo.equals("Project")) {
+            cmbProject = new General().GetProject(cmbProject);
+        } else if (combobo.equals("Store")) {
+            cmbProject = new General().GetStore(cmbProject);
+        }
     }
 }
