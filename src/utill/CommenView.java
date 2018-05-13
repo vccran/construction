@@ -6,7 +6,10 @@
 package utill;
 
 import database.MysqlConnect;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -16,14 +19,17 @@ public class CommenView extends javax.swing.JFrame {
 
     General controller = null;
     ArrayList param;
+    private final SimpleDateFormat dateformat;
 
     /**
      * Creates new form Home
      */
     public CommenView() {
+        dateformat = new SimpleDateFormat("yyyy-MM-dd");
         initComponents();
         controller = new General();
         param = new ArrayList();
+        loadInitial();
     }
 
     /**
@@ -41,10 +47,16 @@ public class CommenView extends javax.swing.JFrame {
         tblinfo = new javax.swing.JTable();
         btnShow = new javax.swing.JButton();
         combo = new javax.swing.JComboBox<>();
+        pnlGetProjectInfo = new javax.swing.JPanel();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
+        pnlIncome = new javax.swing.JPanel();
+        dateIncomeFrom = new com.toedter.calendar.JDateChooser();
+        dateIncomeTo = new com.toedter.calendar.JDateChooser();
+        pnlCombo = new javax.swing.JPanel();
+        commenCombo = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         Clocklbl = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -82,9 +94,9 @@ public class CommenView extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnShow);
-        btnShow.setBounds(10, 10, 330, 30);
+        btnShow.setBounds(10, 60, 310, 30);
 
-        combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Get Project Info", "Employees On Project", "test 2", "test 3", "test 4" }));
+        combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Get Project Info", "Employees On Project", "GetTotalIncome", "GetTotalProfit", "EmployeeSalary" }));
         combo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 comboItemStateChanged(evt);
@@ -96,7 +108,9 @@ public class CommenView extends javax.swing.JFrame {
             }
         });
         jPanel1.add(combo);
-        combo.setBounds(10, 50, 310, 30);
+        combo.setBounds(10, 20, 310, 30);
+
+        pnlGetProjectInfo.setLayout(null);
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Ongoing Projects");
@@ -106,8 +120,8 @@ public class CommenView extends javax.swing.JFrame {
                 jRadioButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton2);
-        jRadioButton2.setBounds(10, 120, 190, 23);
+        pnlGetProjectInfo.add(jRadioButton2);
+        jRadioButton2.setBounds(10, 30, 190, 23);
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setSelected(true);
@@ -118,8 +132,8 @@ public class CommenView extends javax.swing.JFrame {
                 jRadioButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton1);
-        jRadioButton1.setBounds(10, 100, 190, 23);
+        pnlGetProjectInfo.add(jRadioButton1);
+        jRadioButton1.setBounds(10, 10, 190, 23);
 
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("Done Projects");
@@ -129,8 +143,8 @@ public class CommenView extends javax.swing.JFrame {
                 jRadioButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton3);
-        jRadioButton3.setBounds(10, 140, 190, 23);
+        pnlGetProjectInfo.add(jRadioButton3);
+        jRadioButton3.setBounds(10, 50, 190, 23);
 
         buttonGroup1.add(jRadioButton4);
         jRadioButton4.setText("Deleted Projects");
@@ -140,8 +154,29 @@ public class CommenView extends javax.swing.JFrame {
                 jRadioButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton4);
-        jRadioButton4.setBounds(10, 160, 190, 23);
+        pnlGetProjectInfo.add(jRadioButton4);
+        jRadioButton4.setBounds(10, 70, 190, 23);
+
+        jPanel1.add(pnlGetProjectInfo);
+        pnlGetProjectInfo.setBounds(10, 100, 310, 100);
+
+        pnlIncome.setLayout(null);
+        pnlIncome.add(dateIncomeFrom);
+        dateIncomeFrom.setBounds(10, 11, 202, 20);
+        pnlIncome.add(dateIncomeTo);
+        dateIncomeTo.setBounds(10, 40, 202, 20);
+
+        jPanel1.add(pnlIncome);
+        pnlIncome.setBounds(20, 400, 310, 0);
+
+        pnlCombo.setLayout(null);
+
+        commenCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        pnlCombo.add(commenCombo);
+        commenCombo.setBounds(10, 11, 290, 32);
+
+        jPanel1.add(pnlCombo);
+        pnlCombo.setBounds(10, 200, 310, 100);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 130, 1250, 558);
@@ -222,10 +257,7 @@ public class CommenView extends javax.swing.JFrame {
     }//GEN-LAST:event_comboItemStateChanged
 
     private void comboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboActionPerformed
-        param.clear();
-        if (combo.getSelectedIndex() == 0) {
-            param.add(buttonGroup1.getSelection().getActionCommand());
-        }
+
         Show();
     }//GEN-LAST:event_comboActionPerformed
 
@@ -286,6 +318,9 @@ public class CommenView extends javax.swing.JFrame {
     private javax.swing.JButton btnShow;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> combo;
+    private javax.swing.JComboBox<String> commenCombo;
+    private com.toedter.calendar.JDateChooser dateIncomeFrom;
+    private com.toedter.calendar.JDateChooser dateIncomeTo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -296,11 +331,42 @@ public class CommenView extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel pnlCombo;
+    private javax.swing.JPanel pnlGetProjectInfo;
+    private javax.swing.JPanel pnlIncome;
     private javax.swing.JTable tblinfo;
     // End of variables declaration//GEN-END:variables
 
     private void Show() {
-        Integer type = combo.getSelectedIndex() + 1;
+        param.clear();
+        PanalHide(pnlGetProjectInfo);
+        PanalHide(pnlIncome);
+        switch (combo.getSelectedIndex()) {
+            case 0:
+                PanalShow(pnlGetProjectInfo);
+                param.add(buttonGroup1.getSelection().getActionCommand());
+                break;
+            case 2:
+                PanalShow(pnlIncome);
+                if (dateIncomeFrom.getDate() == null || dateIncomeTo.getDate() == null) {
+                    JOptionPane.showMessageDialog(this, "Please select From To Date");
+                    return;
+                }
+                param.add(" and adate BETWEEN CAST('" + dateformat.format(dateIncomeFrom.getDate()) + "' AS DATE) AND CAST('" + dateformat.format(dateIncomeTo.getDate()) + "' AS DATE)");
+                break;
+//            case 5:
+//                PanalShow(pnlIncome);
+//                if (dateIncomeFrom.getDate() == null || dateIncomeTo.getDate() == null) {
+//                    JOptionPane.showMessageDialog(this, "Please select From To Date");
+//                    return;
+//                }
+//                param.add(" and adate BETWEEN CAST('" + dateformat.format(dateIncomeFrom.getDate()) + "' AS DATE) AND CAST('" + dateformat.format(dateIncomeTo.getDate()) + "' AS DATE)");
+//                break;
+            default:
+                break;
+        }
+
+        Integer type = combo.getSelectedIndex();
         try {
             if (controller.getTableQuery(type.toString(), param).equals("")) {
                 throw new Exception();
@@ -314,5 +380,18 @@ public class CommenView extends javax.swing.JFrame {
             ));
             e.printStackTrace();
         }
+    }
+
+    private void PanalShow(JPanel panal) {
+        panal.setBounds(10, 90, 310, 100);
+        panal.show();
+    }
+
+    private void PanalHide(JPanel panal) {
+        panal.hide();
+    }
+
+    private void loadInitial() {
+        PanalHide(pnlGetProjectInfo);
     }
 }

@@ -19,6 +19,7 @@ public class Public {
 
     public static boolean FillTable(JTable table, String Query, MysqlConnect dbConnection) {
         try {
+            System.out.println("Table Query\n" + Query);
             ResultSet rs = dbConnection.query(Query);
 
             //To remove previously added rows
